@@ -3,6 +3,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_l3v63"]
 
 [node name="CharacterScene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.26817)
 
 [node name="Turtle" type="CharacterBody3D" parent="."]
 
