@@ -17,6 +17,7 @@ public partial class MainScene : Node3D
 		multiplier =1;
 		dimension = 0;
 		addScene("res://Scene/turtle/character_scene.tscn");
+		addScene("res://Scene/road/road.tscn");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
