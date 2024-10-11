@@ -8,3 +8,6 @@
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Turtle"]
 shape = SubResource("SphereShape3D_l3v63")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Turtle"]
+rings = 30
