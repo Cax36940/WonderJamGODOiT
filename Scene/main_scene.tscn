@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0xv4becajb1t"]
+
+[ext_resource type="Script" path="res://Code/MainScene.cs" id="1_rt4pm"]
+
+[node name="MainScene" type="Node3D"]
+script = ExtResource("1_rt4pm")

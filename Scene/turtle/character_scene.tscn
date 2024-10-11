@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ca120vbfbdnvh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l3v63"]
+
+[node name="CharacterScene" type="Node3D"]
+
+[node name="Turtle" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Turtle"]
+shape = SubResource("SphereShape3D_l3v63")
