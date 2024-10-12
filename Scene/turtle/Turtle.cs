@@ -16,6 +16,9 @@ public partial class Turtle : CharacterBody3D
 		if (Input.IsActionPressed("ui_left")){
 			direction = -1;
 		}
+		if (Input.IsActionPressed("leap")){
+			dimensionLeap();
+		}
 		
 	}
 
@@ -29,7 +32,17 @@ public partial class Turtle : CharacterBody3D
 		this.Set(Node3D.PropertyName.Position, pos);
 		
 		direction = 0;
+		
+		
 	}
 	
+	public void dimensionLeap(){
+		
+		GD.Print("DIIIIIMEEEEEENNNNSIIIOOOOOOOONNNNNN");
+	}
+	
+	public void collideObject(Node3D area){
+		MainScene.getInstance().death();
+	}
 	
 }

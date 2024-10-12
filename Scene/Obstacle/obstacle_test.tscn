@@ -10,6 +10,8 @@ size = Vector3(1, 1, 0.306152)
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("1_igkin")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.330962, 0.333621, 0.602548)
 shape = SubResource("BoxShape3D_nsb64")
