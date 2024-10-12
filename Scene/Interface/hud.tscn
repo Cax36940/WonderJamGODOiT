@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuuhbrdthc4ym"]
+[gd_scene load_steps=3 format=3 uid="uid://cuuhbrdthc4ym"]
 
 [ext_resource type="Script" path="res://Code/Interface/hud.gd" id="1_0rilc"]
+[ext_resource type="FontFile" uid="uid://bjjfelhwini4n" path="res://Assets/Interface/Angels.ttf" id="2_dex0c"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -10,3 +11,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0rilc")
+
+[node name="MPH" type="Label" parent="."]
+modulate = Color(0.94, 0.188, 0.2256, 1)
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 387.0
+offset_bottom = 75.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_dex0c")
+theme_override_font_sizes/font_size = 60
+text = "200 mph"
+horizontal_alignment = 2

@@ -4,9 +4,12 @@ var list_score : Array[int] = []
 var score_label_scene : Resource = preload("res://Scene/Interface/score_label.tscn")
 
 var score_buffer : float = 0
+var mph_hue_value : float = 0
 
 func _ready():
 	add_score_label()
+	$MPH.position.x = size.x - $MPH.size.x - 20
+	$MPH.position.y = 80
 	pass # Replace with function body.
 
 
@@ -14,6 +17,13 @@ func _ready():
 func _process(delta):
 	add_score(get_node("/root/MainScene").getScoreBuffer())
 	get_node("/root/MainScene").setScoreBuffer(0.0)
+	
+	$MPH.modulate = Color.from_hsv(mph_hue_value, 0.8, 1.)
+	mph_hue_value += delta/10
+	if mph_hue_value > 1 :
+		mph_hue_value = 0
+	$MPH.text = str(int(get_node("/root/MainScene").getSpeed())) + " MPH"
+	
 	pass
 
 func add_score_label():
