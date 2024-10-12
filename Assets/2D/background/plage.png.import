@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db3dm0wpui16p"
-path="res://.godot/imported/stones.png-1006c73f467862a3d6df085c990ef9b6.ctex"
+uid="uid://bw1vn7m13g1g3"
+path="res://.godot/imported/plage.png-1c30b0d0e36089805d193d8adbfe05f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/stones.png"
-dest_files=["res://.godot/imported/stones.png-1006c73f467862a3d6df085c990ef9b6.ctex"]
+source_file="res://Assets/2D/background/plage.png"
+dest_files=["res://.godot/imported/plage.png-1c30b0d0e36089805d193d8adbfe05f2.ctex"]
 
 [params]
 

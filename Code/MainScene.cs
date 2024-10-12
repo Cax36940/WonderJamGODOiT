@@ -8,6 +8,8 @@ public partial class MainScene : Node3D
 	int score;
 	int multiplier;
 	int dimension;
+	Godot.Collections.Array<string> dimensionBackground = new Godot.Collections.Array<string>();
+	Godot.Collections.Array<string> dimensionRoad = new Godot.Collections.Array<string>();
 	
 	static MainScene instance; 
 	
@@ -22,6 +24,29 @@ public partial class MainScene : Node3D
 		addScene("res://Scene/road/road.tscn");
 		addScene("res://Scene/Obstacle/spawner.tscn");
 		instance = this;
+		
+	}
+	
+	public void loadDimensionList(){
+		
+		//To add a dimension, add a background file path and a road file path :
+		
+		//dim 1
+		dimensionBackground.Add("res://Scene/background/background.tscn");
+		dimensionRoad.Add("res://Scene/road/road.tscn");
+		//dim 2
+		dimensionBackground.Add("res://Scene/background/background.tscn");
+		dimensionRoad.Add("res://Scene/road/road.tscn");
+		//dim 3
+		dimensionBackground.Add("res://Scene/background/background.tscn");
+		dimensionRoad.Add("res://Scene/road/road.tscn");
+		//dim 4
+		dimensionBackground.Add("res://Scene/background/background.tscn");
+		dimensionRoad.Add("res://Scene/road/road.tscn");
+		//dim 5
+		dimensionBackground.Add("res://Scene/background/background.tscn");
+		dimensionRoad.Add("res://Scene/road/road.tscn");
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,7 +67,16 @@ public partial class MainScene : Node3D
 	}
 	
 	public void changeDimension(){
-		
+		if (dimension >= dimensionBackground.Count | dimension >= dimensionRoad.Count){
+			dimension =0 ;
+		}else {
+			dimension +=1 ;
+		}
+		clearScene();
+		addScene(dimensionBackground[dimension]);
+		addScene(dimensionBackground[dimension]);
+		addScene("res://Scene/Obstacle/spawner.tscn");
+		addScene("res://Scene/turtle/character_scene.tscn");
 	}
 	
 	public float getSpeed(){
