@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dop16d8x4xdop"]
+
+[ext_resource type="FontFile" uid="uid://bjjfelhwini4n" path="res://Assets/Interface/Angels.ttf" id="1_ho718"]
+
+[node name="ScoreLabel" type="Label"]
+offset_right = 181.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("1_ho718")
+theme_override_font_sizes/font_size = 60
+text = "888"
+horizontal_alignment = 2

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bukgs4dqjo4ta"]
 
-[ext_resource type="Texture2D" uid="uid://ciw5y6uf8gb43" path="res://Assets/tile_plage.png" id="1_ht54w"]
+[ext_resource type="Texture2D" uid="uid://ciw5y6uf8gb43" path="res://Assets/2D/road/tile_plage.png" id="1_ht54w"]
 [ext_resource type="Script" path="res://Code/Road/tiling.gd" id="1_sio73"]
 
 [node name="Tiling" type="Node3D"]
