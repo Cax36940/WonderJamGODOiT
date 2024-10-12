@@ -9,11 +9,14 @@ size = Vector3(3.14594, 4.35596, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41312, 0)
+alpha_cut = 3
 texture = ExtResource("1_tl2e6")
 hframes = 2
 vframes = 2
 frame = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352692, 1.67798, 0)
 shape = SubResource("BoxShape3D_lfn5e")
