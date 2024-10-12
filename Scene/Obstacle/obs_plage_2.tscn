@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://db3dm0wpui16p" path="res://Assets/2D/obstacle/stones.png" id="1_5vaaj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lfn5e"]
+size = Vector3(3.88333, 2.5752, 0.249023)
 
 [node name="Node3D" type="Node3D"]
 
@@ -14,4 +15,5 @@ vframes = 2
 frame = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0895233, 0.787598, -0.0675038)
 shape = SubResource("BoxShape3D_lfn5e")
