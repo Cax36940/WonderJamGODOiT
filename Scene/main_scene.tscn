@@ -4,4 +4,3 @@
 
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_rt4pm")
-

@@ -9,7 +9,7 @@ size = Vector3(3.14594, 4.35596, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41312, 0)
-alpha_cut = 3
+alpha_cut = 1
 texture = ExtResource("1_tl2e6")
 hframes = 2
 vframes = 2
