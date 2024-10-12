@@ -31,11 +31,14 @@ func _process(delta):
 		set_process(false)
 		if !$Timer.is_stopped() :
 			$Timer.stop()
+			get_node("/root/MainScene").highSuccess()
 			$AnimationPlayer.play("BestSuccess")
 			best = true
 		elif $Icon2.position.x <= error:
+			get_node("/root/MainScene").success()
 			$AnimationPlayer.play("Success")
 		else :
+			get_node("/root/MainScene").fail()
 			$AnimationPlayer.play("Fail")
 		return
 	
@@ -60,5 +63,6 @@ func timed():
 func _on_timer_timeout():
 	set_process(false)
 	await_fail = true
+	get_node("/root/MainScene").fail()
 	$AnimationPlayer.play("Fail")
 	pass # Replace with function body.
