@@ -29,6 +29,7 @@ public partial class MainScene : Node3D
 		addScene("res://Scene/road/road.tscn");
 		addScene("res://Scene/Obstacle/spawner.tscn");
 		addScene("res://Scene/environnement.tscn");
+		addScene("res://Scene/Obstacle/border.tscn");
 		instance = this;
 		loadDimensionList();
 		
@@ -98,6 +99,7 @@ public partial class MainScene : Node3D
 		addScene("res://Scene/Obstacle/spawner.tscn");
 		addScene("res://Scene/turtle/character_scene.tscn");
 		addScene("res://Scene/environnement.tscn");
+		addScene("res://Scene/Obstacle/border.tscn");
 		
 		score+=1000;
 		multiplier+=1;
