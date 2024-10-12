@@ -79,6 +79,10 @@ public partial class MainScene : Node3D
 		addScene("res://Scene/turtle/character_scene.tscn");
 	}
 	
+	public void death(){
+		GD.Print("Now you're dead you filthy casual ");
+	}
+	
 	public float getSpeed(){
 		return speed;	
 	}
