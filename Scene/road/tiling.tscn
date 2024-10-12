@@ -14,7 +14,7 @@ texture = ExtResource("1_ht54w")
 region_enabled = true
 region_rect = Rect2(0, 0, 50000, 50000)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Background" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.6323, 167.542, -477.8)
 pixel_size = 0.4
 texture = ExtResource("3_j8a1b")

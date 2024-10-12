@@ -3,10 +3,9 @@ using System;
 
 public partial class MainScene : Node3D
 {
-	
-	float speed;
-	float score;
 	float accelerationMultiplier;
+	float speed;
+	float score_buffer;
 	int multiplier;
 	int dimension;
 	int jauge;
@@ -20,7 +19,7 @@ public partial class MainScene : Node3D
 	{
 		GD.Print("ready");
 		speed = 20;
-		score =0;
+		score_buffer = 0;
 		jauge = 0;
 		multiplier =1;
 		dimension = 0;
@@ -60,7 +59,7 @@ public partial class MainScene : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		score = (float)delta*speed*multiplier;
+		score_buffer += (float)delta*speed*multiplier;
 		speed+= (float)delta*accelerationMultiplier;
 		
 		if (jauge>=100){	
@@ -100,7 +99,7 @@ public partial class MainScene : Node3D
 		addScene("res://Scene/environnement.tscn");
 		addScene("res://Scene/Obstacle/border.tscn");
 		
-		score+=1000;
+		score_buffer += 1000.0f;
 		multiplier+=1;
 	}
 	
@@ -110,10 +109,6 @@ public partial class MainScene : Node3D
 	
 	public float getSpeed(){
 		return speed;	
-	}
-	
-	public float getScore(){
-		return score;	
 	}
 	
 	public int getMultiplier(){
@@ -136,6 +131,12 @@ public partial class MainScene : Node3D
 		jauge = njauge;
 	}
 	
+	public void setScoreBuffer(float nscore){
+		score_buffer = nscore;
+	}
 	
+	public float getScoreBuffer(){
+		return score_buffer;
+	}
 	
 }
