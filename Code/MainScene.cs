@@ -12,6 +12,10 @@ public partial class MainScene : Node3D
 	int jauge;
 	float transitionTime = 0;
 	bool isTransition = false;
+	float timingForSpace = 0.5f ;
+	float timeAfterSound = 0;
+	float timingBPM = 3;
+	float timeSinceLastSound = 0;
 	Godot.Collections.Array<string> dimensionRoad = new Godot.Collections.Array<string>();
 	Godot.Collections.Array<string> dimensionMusic = new Godot.Collections.Array<string>();
 	
@@ -90,6 +94,17 @@ public partial class MainScene : Node3D
 			}
 			
 		}
+		if (timeSinceLastSound > timingBPM){
+			timeAfterSound = timingForSpace;
+			timeSinceLastSound=0;
+			GD.Print("Space");
+		}
+		
+		if (timeAfterSound > 0 ) {
+			timeAfterSound-= (float)delta;
+		}
+		
+		timeSinceLastSound+=(float)delta;
 		
 	}
 	
@@ -109,6 +124,19 @@ public partial class MainScene : Node3D
 		this.RemoveChild(this.GetNode("./Spawner"));
 		this.RemoveChild(this.GetNode("./Portal"));
 		this.RemoveChild(this.GetNode("./Musique"));
+	}
+	
+	
+	public void highSuccess(){
+		
+	}
+	
+	public void success(){
+		
+	}
+	
+	public void fail(){
+		
 	}
 	
 	public void addBonus(int type){
@@ -181,6 +209,9 @@ public partial class MainScene : Node3D
 	
 	public float getTransitionTime(){
 		return transitionTime;
+	}
+	public float getTimeAfterSound(){
+		return timeAfterSound;
 	}
 	
 }
