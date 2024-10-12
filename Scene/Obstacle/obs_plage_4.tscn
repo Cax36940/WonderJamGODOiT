@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_lfn5e"]
 size = Vector3(3.14594, 4.35596, 1)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.41312, 0)
