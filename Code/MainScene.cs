@@ -95,6 +95,18 @@ public partial class MainScene : Node3D
 		this.RemoveChild(this.GetNode("./Portal"));
 	}
 	
+	public void addBonus(int type){
+		if(type == 1){
+			score_buffer+=50*multiplier;
+		}
+		if(type == 2){
+			score_buffer+=50*2*multiplier;
+		}
+		if(type == 3){
+			score_buffer+=50*3*multiplier;
+		}
+	}
+	
 	public void changeDimension(){
 		
 		if (dimension >= dimensionRoad.Count-1){

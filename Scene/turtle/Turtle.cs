@@ -72,7 +72,23 @@ public partial class Turtle : CharacterBody3D
 	}
 	
 	public void collideObject(Node3D area){
-		MainScene.getInstance().death();
+		GD.Print(area.Name);
+		
+		if (area.Name == "Bonus1"){
+			MainScene.getInstance().addBonus(1);
+			area.GetParent().QueueFree();
+			
+		}else if (area.Name == "Bonus2"){
+			MainScene.getInstance().addBonus(2);
+			area.GetParent().QueueFree();
+			
+		}else if(area.Name == "Bonus3"){
+			MainScene.getInstance().addBonus(3);
+			area.GetParent().QueueFree();
+			
+		}else{
+			MainScene.getInstance().death();
+		}
 	}
 	
 }
