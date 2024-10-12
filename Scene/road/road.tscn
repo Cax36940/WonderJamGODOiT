@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://xlo6qdrl8sc1"]
 
-[ext_resource type="Texture2D" uid="uid://cw4ph2pmo540f" path="res://icon.svg" id="1_87ekh"]
+[ext_resource type="PackedScene" uid="uid://bukgs4dqjo4ta" path="res://Scene/road/tiling.tscn" id="1_w4x8l"]
 
 [node name="Road" type="Node3D"]
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.36312, 0)
-texture = ExtResource("1_87ekh")
+[node name="Tiling" parent="." instance=ExtResource("1_w4x8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
