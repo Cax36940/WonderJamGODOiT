@@ -22,10 +22,10 @@ public partial class Spawner : Node
 		Godot.Collections.Array<string> obstacleForDimension = new Godot.Collections.Array<string>();
 		
 		//Ajout 4 obstacles pour dim1:
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_dim1_1.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_dim1_1.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_plage_1.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_plage_2.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_plage_3.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_plage_4.tscn");
 		
 		dimensionObstacle.Add(new Godot.Collections.Array<string>(obstacleForDimension));
 		obstacleForDimension.Clear();

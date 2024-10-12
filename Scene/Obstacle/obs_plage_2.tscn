@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4di2pg8v7y56"]
+
+[ext_resource type="Texture2D" uid="uid://db3dm0wpui16p" path="res://Assets/2D/obstacle/stones.png" id="1_5vaaj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfn5e"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.71514, 0)
+texture = ExtResource("1_5vaaj")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_lfn5e")
