@@ -4,7 +4,7 @@ using System;
 public partial class Spawner : Node
 {
 	
-	int max_obstacle = 30; 
+	int max_obstacle = 15; 
 	int nb_obstacle = 0;
 	int cycle_obstacle = 0;
 	Godot.Collections.Array<Godot.Collections.Array<string>> dimensionObstacle = new Godot.Collections.Array<Godot.Collections.Array<string>>();

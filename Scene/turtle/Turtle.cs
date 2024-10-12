@@ -3,7 +3,7 @@ using System;
 
 public partial class Turtle : CharacterBody3D
 {
-	public float Speed = 10.0f;
+	public float Speed = 20.0f;
 	float direction ;
 
 	public override void _Process(double delta){
@@ -16,7 +16,7 @@ public partial class Turtle : CharacterBody3D
 		if (Input.IsActionPressed("ui_left")){
 			direction = -1;
 		}
-		if (Input.IsActionPressed("leap")){
+		if (Input.IsActionJustPressed("leap")){
 			dimensionLeap();
 		}
 		
@@ -24,6 +24,8 @@ public partial class Turtle : CharacterBody3D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		
+		
 		
 		Vector3 pos =(Vector3) this.Get(Node3D.PropertyName.Position);
 
@@ -38,7 +40,8 @@ public partial class Turtle : CharacterBody3D
 	
 	public void dimensionLeap(){
 		
-		GD.Print("DIIIIIMEEEEEENNNNSIIIOOOOOOOONNNNNN");
+		MainScene.getInstance().setJauge(MainScene.getInstance().getJauge()+10);
+		
 	}
 	
 	public void collideObject(Node3D area){

@@ -5,9 +5,11 @@ public partial class MainScene : Node3D
 {
 	
 	float speed;
-	int score;
+	float score;
+	float accelerationMultiplier;
 	int multiplier;
 	int dimension;
+	int jauge;
 	Godot.Collections.Array<string> dimensionBackground = new Godot.Collections.Array<string>();
 	Godot.Collections.Array<string> dimensionRoad = new Godot.Collections.Array<string>();
 	
@@ -16,14 +18,19 @@ public partial class MainScene : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		speed = 50;
+		GD.Print("ready");
+		speed = 20;
 		score =0;
+		jauge = 0;
 		multiplier =1;
 		dimension = 0;
+		accelerationMultiplier = 0.1f;
 		addScene("res://Scene/turtle/character_scene.tscn");
 		addScene("res://Scene/road/road.tscn");
 		addScene("res://Scene/Obstacle/spawner.tscn");
+		addScene("res://Scene/environnement.tscn");
 		instance = this;
+		loadDimensionList();
 		
 	}
 	
@@ -52,6 +59,16 @@ public partial class MainScene : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		score = (float)delta*speed*multiplier;
+		speed+= (float)delta*accelerationMultiplier;
+		
+		if (jauge>=100){
+			GD.Print("jauge : ",jauge);
+			changeDimension();
+			jauge = 0;
+			GD.Print("jauge : ",jauge);
+		}
+		
 	}
 	
 	public void addScene(string path){
@@ -67,16 +84,23 @@ public partial class MainScene : Node3D
 	}
 	
 	public void changeDimension(){
-		if (dimension >= dimensionBackground.Count | dimension >= dimensionRoad.Count){
-			dimension =0 ;
+		
+		if (dimension >= dimensionBackground.Count-1 | dimension >= dimensionRoad.Count-1){
+			dimension = 0 ;
 		}else {
 			dimension +=1 ;
 		}
 		clearScene();
+		
+		GD.Print("Dimension : ",dimension);
 		addScene(dimensionBackground[dimension]);
-		addScene(dimensionBackground[dimension]);
+		addScene(dimensionRoad[dimension]);
 		addScene("res://Scene/Obstacle/spawner.tscn");
 		addScene("res://Scene/turtle/character_scene.tscn");
+		addScene("res://Scene/environnement.tscn");
+		
+		score+=1000;
+		multiplier+=1;
 	}
 	
 	public void death(){
@@ -87,7 +111,7 @@ public partial class MainScene : Node3D
 		return speed;	
 	}
 	
-	public int getScore(){
+	public float getScore(){
 		return score;	
 	}
 	
@@ -102,6 +126,15 @@ public partial class MainScene : Node3D
 	public static MainScene getInstance(){
 		return instance;
 	}
+	
+	public int getJauge(){
+		return jauge;
+	}
+	
+	public void setJauge(int njauge){
+		jauge = njauge;
+	}
+	
 	
 	
 }
