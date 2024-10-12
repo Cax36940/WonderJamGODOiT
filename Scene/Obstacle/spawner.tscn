@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cyuqmq5bkl0uy"]
+[gd_scene load_steps=2 format=3 uid="uid://cyuqmq5bkl0uy"]
+
+[ext_resource type="Script" path="res://Code/Obstacle/Spawner.cs" id="1_rekgu"]
 
 [node name="Spawner" type="Node"]
+script = ExtResource("1_rekgu")
