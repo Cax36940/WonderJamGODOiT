@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c72cqyjasaq7i"]
+[gd_scene load_steps=3 format=3 uid="uid://c72cqyjasaq7i"]
 
-[ext_resource type="Texture2D" uid="uid://vnu5mtd8gnjh" path="res://Assets/2D/portals.png" id="1_em4iv"]
+[ext_resource type="Texture2D" uid="uid://c3vbxnto2c14r" path="res://Scene/background/portals.png" id="1_5j812"]
+[ext_resource type="Script" path="res://Scene/background/portal.cs" id="2_k71g2"]
 
 [node name="Portal" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("1_em4iv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30588, -2.82756, 0)
+pixel_size = 0.1
+alpha_cut = 1
+texture = ExtResource("1_5j812")
+script = ExtResource("2_k71g2")

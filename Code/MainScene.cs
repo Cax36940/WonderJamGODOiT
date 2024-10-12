@@ -10,6 +10,8 @@ public partial class MainScene : Node3D
 	int fact;
 	int dimension;
 	int jauge;
+	float transitionTime = 0;
+	bool isTransition = false;
 	Godot.Collections.Array<string> dimensionRoad = new Godot.Collections.Array<string>();
 	
 	static MainScene instance; 
@@ -60,8 +62,17 @@ public partial class MainScene : Node3D
 		speed+= (float)delta*accelerationMultiplier;
 		
 		if (jauge>=100){	
-			changeDimension();
+			startTransition();
 			jauge = 0;
+			}
+			
+		if (isTransition){
+			if (transitionTime <= 0){
+				changeDimension();
+				isTransition = false;
+			}else {
+				transitionTime-= (float)delta;
+			}
 			
 		}
 		
@@ -72,9 +83,16 @@ public partial class MainScene : Node3D
 		this.AddChild(newScene);
 	}
 	
+	public void startTransition(){
+		isTransition=true;
+		transitionTime=5;
+		addScene("res://Scene/background/portal.tscn");
+	}
+	
 	public void clearScene(){
 		this.RemoveChild(this.GetNode("./Road"));
 		this.RemoveChild(this.GetNode("./Spawner"));
+		this.RemoveChild(this.GetNode("./Portal"));
 	}
 	
 	public void changeDimension(){
@@ -129,6 +147,10 @@ public partial class MainScene : Node3D
 	
 	public float getScoreBuffer(){
 		return score_buffer;
+	}
+	
+	public float getTransitionTime(){
+		return transitionTime;
 	}
 	
 }
