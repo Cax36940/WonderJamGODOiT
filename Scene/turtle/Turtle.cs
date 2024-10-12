@@ -5,6 +5,11 @@ public partial class Turtle : CharacterBody3D
 {
 	public float Speed = 20.0f;
 	float direction ;
+	float timingForSpace = 0.5f ;
+	float timeAfterSound = 0;
+	float timingBPM = 3;
+	float timeSinceLastSound = 0;
+	int pointForJauge = 10;
 
 	public override void _Process(double delta){
 			
@@ -19,6 +24,18 @@ public partial class Turtle : CharacterBody3D
 		if (Input.IsActionJustPressed("leap")){
 			dimensionLeap();
 		}
+		
+		if (timeSinceLastSound > timingBPM){
+			timeAfterSound = timingForSpace;
+			timeSinceLastSound=0;
+			GD.Print("Space");
+		}
+		
+		if (timeAfterSound > 0 ) {
+			timeAfterSound-= (float)delta;
+		}
+		
+		timeSinceLastSound+=(float)delta;
 		
 	}
 
@@ -41,13 +58,17 @@ public partial class Turtle : CharacterBody3D
 		
 		direction = 0;
 		
-		
 	}
 	
 	public void dimensionLeap(){
 		
-		MainScene.getInstance().setJauge(MainScene.getInstance().getJauge()+10);
 		
+		if (timeAfterSound > 0){
+			MainScene.getInstance().setJauge(MainScene.getInstance().getJauge()+pointForJauge);
+			GD.Print("Tuuuurrbooooooo!!!!");
+		}else {
+			GD.Print("Not the time");
+		}
 	}
 	
 	public void collideObject(Node3D area){

@@ -63,11 +63,10 @@ public partial class MainScene : Node3D
 		score = (float)delta*speed*multiplier;
 		speed+= (float)delta*accelerationMultiplier;
 		
-		if (jauge>=100){
-			GD.Print("jauge : ",jauge);
+		if (jauge>=100){	
 			changeDimension();
 			jauge = 0;
-			GD.Print("jauge : ",jauge);
+			
 		}
 		
 	}
