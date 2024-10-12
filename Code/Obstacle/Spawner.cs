@@ -4,9 +4,9 @@ using System;
 public partial class Spawner : Node
 {
 	
-	int max_obstacle = 30; 
+	int max_obstacle = 15; 
 	int nb_obstacle = 0;
-	int cycle_obstacle = 0;
+	float cycle_obstacle = 0;
 	Godot.Collections.Array<Godot.Collections.Array<string>> dimensionObstacle = new Godot.Collections.Array<Godot.Collections.Array<string>>();
 	
 	// Called when the node enters the scene tree for the first time.
@@ -70,8 +70,8 @@ public partial class Spawner : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		cycle_obstacle+=1;
-		if (cycle_obstacle>30){
+		cycle_obstacle+= (float)delta;
+		if (cycle_obstacle>1){
 			spawnObstacle(dimensionObstacle[MainScene.getInstance().getDimension()].PickRandom());
 			cycle_obstacle = 0;
 		}

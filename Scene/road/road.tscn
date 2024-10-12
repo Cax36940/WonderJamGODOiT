@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xlo6qdrl8sc1"]
 
-[ext_resource type="PackedScene" path="res://Scene/road/tiling.tscn" id="1_w4x8l"]
+[ext_resource type="PackedScene" uid="uid://bukgs4dqjo4ta" path="res://Scene/road/tiling.tscn" id="1_w4x8l"]
 
 [node name="Road" type="Node3D"]
 
