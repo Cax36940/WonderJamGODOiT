@@ -24,7 +24,7 @@ public partial class MainScene : Node3D
 		jauge = 0;
 		multiplier =1;
 		dimension = 0;
-		accelerationMultiplier = 0.1f;
+		accelerationMultiplier = 0.5f;
 		addScene("res://Scene/turtle/character_scene.tscn");
 		addScene("res://Scene/road/road.tscn");
 		addScene("res://Scene/Obstacle/spawner.tscn");
