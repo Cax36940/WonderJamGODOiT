@@ -18,7 +18,7 @@ public partial class Spawner : Node
 	public override void _Process(double delta)
 	{
 		cycle_obstacle+=1;
-		if (cycle_obstacle>20){
+		if (cycle_obstacle>30){
 			spawnObstacle("res://Scene/Obstacle/obstacle_test.tscn");
 			cycle_obstacle = 0;
 		}
