@@ -7,11 +7,64 @@ public partial class Spawner : Node
 	int max_obstacle = 30; 
 	int nb_obstacle = 0;
 	int cycle_obstacle = 0;
+	Godot.Collections.Array<Godot.Collections.Array<string>> dimensionObstacle = new Godot.Collections.Array<Godot.Collections.Array<string>>();
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		
+		loadObstacleFile();
+	}
+	
+	public void loadObstacleFile(){
+		
+		//liste d'obstacle :
+		Godot.Collections.Array<string> obstacleForDimension = new Godot.Collections.Array<string>();
+		
+		//Ajout 4 obstacles pour dim1:
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_dim1_1.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_dim1_1.tscn");
+		
+		dimensionObstacle.Add(new Godot.Collections.Array<string>(obstacleForDimension));
+		obstacleForDimension.Clear();
+		
+		//Ajout 4 obstacles pour dim 2:
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		
+		dimensionObstacle.Add(new Godot.Collections.Array<string>(obstacleForDimension));
+		obstacleForDimension.Clear();
+		
+		//Ajout 4 obstacles pour dim 3:
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		
+		dimensionObstacle.Add(new Godot.Collections.Array<string>(obstacleForDimension));
+		obstacleForDimension.Clear();
+		
+		//Ajout 4 obstacles pour dim 4:
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		
+		dimensionObstacle.Add(new Godot.Collections.Array<string>(obstacleForDimension));
+		obstacleForDimension.Clear();
+		
+		//Ajout 4 obstacles pour dim 5:
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		
+		dimensionObstacle.Add(new Godot.Collections.Array<string>(obstacleForDimension));
+		obstacleForDimension.Clear();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,7 +72,7 @@ public partial class Spawner : Node
 	{
 		cycle_obstacle+=1;
 		if (cycle_obstacle>30){
-			spawnObstacle("res://Scene/Obstacle/obstacle_test.tscn");
+			spawnObstacle(dimensionObstacle[MainScene.getInstance().getDimension()].PickRandom());
 			cycle_obstacle = 0;
 		}
 			

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw1vn7m13g1g3"
-path="res://.godot/imported/plage.png-f26fa489f7a836b038e1354955d0933a.ctex"
+uid="uid://ciw5y6uf8gb43"
+path="res://.godot/imported/tile_plage.png-813f33d434970ec41b28c21e18e0e764.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/plage.png"
-dest_files=["res://.godot/imported/plage.png-f26fa489f7a836b038e1354955d0933a.ctex"]
+source_file="res://Assets/2D/road/tile_plage.png"
+dest_files=["res://.godot/imported/tile_plage.png-813f33d434970ec41b28c21e18e0e764.ctex"]
 
 [params]
 
