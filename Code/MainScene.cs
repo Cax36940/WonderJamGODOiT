@@ -29,6 +29,7 @@ public partial class MainScene : Node3D
 		addScene("res://Scene/Obstacle/spawner.tscn");
 		addScene("res://Scene/environnement.tscn");
 		addScene("res://Scene/Obstacle/border.tscn");
+		addScene("res://Scene/Interface/hud.tscn");
 		instance = this;
 		loadDimensionList();
 		
