@@ -31,6 +31,12 @@ public partial class Turtle : CharacterBody3D
 
 		pos.X += direction*Speed*(float) delta;
 		
+		if (pos.X > 6){
+			pos.X =6;
+		}else if (pos.X < -6){
+			pos.X =-6;
+		}
+		
 		this.Set(Node3D.PropertyName.Position, pos);
 		
 		direction = 0;
