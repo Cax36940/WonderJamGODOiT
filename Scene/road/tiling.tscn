@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bukgs4dqjo4ta"]
+
+[ext_resource type="Texture2D" uid="uid://bvksh60vm1euy" path="res://Assets/tile_plage.png" id="1_ht54w"]
+[ext_resource type="Script" path="res://Code/Road/tiling.gd" id="1_sio73"]
+
+[node name="Tiling" type="Node3D"]
+script = ExtResource("1_sio73")
+
+[node name="RoadSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -50)
+flip_v = true
+texture = ExtResource("1_ht54w")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906463, 0.422286, 0, -0.422286, 0.906463, 0, 5.35225, 0)
