@@ -13,6 +13,7 @@ public partial class MainScene : Node3D
 	float transitionTime = 0;
 	bool isTransition = false;
 	Godot.Collections.Array<string> dimensionRoad = new Godot.Collections.Array<string>();
+	Godot.Collections.Array<string> dimensionMusic = new Godot.Collections.Array<string>();
 	
 	static MainScene instance; 
 	
@@ -33,6 +34,7 @@ public partial class MainScene : Node3D
 		addScene("res://Scene/environnement.tscn");
 		addScene("res://Scene/Obstacle/border.tscn");
 		addScene("res://Scene/Interface/hud.tscn");
+		addScene("res://Scene/Musique/musique_dim_1.tscn");
 		instance = this;
 		loadDimensionList();
 		
@@ -52,6 +54,19 @@ public partial class MainScene : Node3D
 		dimensionRoad.Add("res://Scene/road/road.tscn");
 		//dim 5
 		dimensionRoad.Add("res://Scene/road/road.tscn");
+		
+		//Musique
+		
+		//dim 1
+		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
+		//dim 2
+		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
+		//dim 3
+		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
+		//dim 4
+		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
+		//dim 5
+		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
 		
 	}
 
@@ -93,6 +108,7 @@ public partial class MainScene : Node3D
 		this.RemoveChild(this.GetNode("./Road"));
 		this.RemoveChild(this.GetNode("./Spawner"));
 		this.RemoveChild(this.GetNode("./Portal"));
+		this.RemoveChild(this.GetNode("./Musique"));
 	}
 	
 	public void addBonus(int type){
@@ -107,6 +123,7 @@ public partial class MainScene : Node3D
 		}
 	}
 	
+	
 	public void changeDimension(){
 		
 		if (dimension >= dimensionRoad.Count-1){
@@ -119,6 +136,7 @@ public partial class MainScene : Node3D
 		GD.Print("Dimension : ",dimension);
 		addScene(dimensionRoad[dimension]);
 		addScene("res://Scene/Obstacle/spawner.tscn");
+		addScene("res://Scene/Musique/musique_dim_1.tscn");
 		
 		score_buffer += 1000.0f * multiplier;
 		multiplier *= fact;
