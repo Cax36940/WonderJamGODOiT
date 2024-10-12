@@ -118,7 +118,7 @@ public partial class Spawner : Node
 			obstacle.Set(Node3D.PropertyName.Position, pos);
 			
 			
-			if (obstacle.Position.Z >= 5){
+			if (obstacle.Position.Z >= 10){
 				this.RemoveChild(obstacle);
 				obstacle.QueueFree();
 				nb_obstacle-=1;		
