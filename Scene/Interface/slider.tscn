@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxe00o3msgngq"]
+
+[ext_resource type="Script" path="res://Code/Interface/slider.gd" id="1_dok3f"]
+[ext_resource type="Texture2D" uid="uid://cw4ph2pmo540f" path="res://icon.svg" id="1_r0kl6"]
+
+[node name="Slider" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dok3f")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(640, 660)
+scale = Vector2(10, 0.5)
+texture = ExtResource("1_r0kl6")
+
+[node name="Spawner" type="Node2D" parent="."]
