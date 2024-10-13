@@ -9,10 +9,10 @@ public partial class Border : Node3D
 		Node3D wall;
 		
 		for(int posX = 0; posX < 505; posX++){
-			wall =(Node3D)GD.Load<PackedScene>("res://Scene/Obstacle/border_element.tscn").Instantiate();
+			wall =(Node3D)GD.Load<PackedScene>("res://Scene/road/fence.tscn").Instantiate();
 			wall.Set(Node3D.PropertyName.Position, new Vector3(8,0,-posX+5));
 			this.AddChild(wall);
-			wall =(Node3D)GD.Load<PackedScene>("res://Scene/Obstacle/border_element.tscn").Instantiate();
+			wall =(Node3D)GD.Load<PackedScene>("res://Scene/road/fence.tscn").Instantiate();
 			wall.Set(Node3D.PropertyName.Position, new Vector3(-8,0,-posX+5));
 			this.AddChild(wall);
 		}
