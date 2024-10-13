@@ -13,6 +13,7 @@ uniform vec2 tile = vec2(10.0, 10.0);
 uniform float height = 2.0;
 uniform vec2 wave_size = vec2(2.0, 2.0);
 uniform float wave_speed = 0.5;
+uniform float translation_speed = 0.0;
 
 const float M_2PI = 6.283185307;
 const float M_6PI = 18.84955592;
@@ -65,7 +66,7 @@ float circ(vec2 pos, vec2 c, float s)
 // Foam pattern for the water constructed out of a series of circles
 float waterlayer(vec2 uv)
 {
-	uv += vec2(TIME, 0);
+	uv += vec2(translation_speed, 0);
     uv = mod(uv, 1.0); // Clamp to [0..1]
 
     float ret = 1.0;

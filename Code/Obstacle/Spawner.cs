@@ -45,19 +45,19 @@ public partial class Spawner : Node
 		obstacleForDimension.Clear();
 		
 		//Ajout 4 obstacles pour dim 2:
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_mer_1.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_mer_2.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_mer_3.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_mer_4.tscn");
 		
 		dimensionObstacle.Add(new Godot.Collections.Array<string>(obstacleForDimension));
 		obstacleForDimension.Clear();
 		
 		//Ajout 4 obstacles pour dim 3:
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_space_1.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_space_2.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_space_3.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_space_4.tscn");
 		
 		dimensionObstacle.Add(new Godot.Collections.Array<string>(obstacleForDimension));
 		obstacleForDimension.Clear();

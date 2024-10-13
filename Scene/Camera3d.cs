@@ -12,7 +12,7 @@ public partial class Camera3d : Camera3D
 	public override void _Ready()
 	{
 		this.Set(Camera3D.PropertyName.Fov, fovInitial);
-		
+		this.Far = 10000.0f;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

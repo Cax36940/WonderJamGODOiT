@@ -64,9 +64,9 @@ public partial class MainScene : Node3D
 		//dim 1
 		dimensionRoad.Add("res://Scene/road/road.tscn");
 		//dim 2
-		dimensionRoad.Add("res://Scene/road/road.tscn");
+		dimensionRoad.Add("res://Scene/road/road2.tscn");
 		//dim 3
-		dimensionRoad.Add("res://Scene/road/road.tscn");
+		dimensionRoad.Add("res://Scene/road/road3.tscn");
 		//dim 4
 		dimensionRoad.Add("res://Scene/road/road.tscn");
 		//dim 5
@@ -100,6 +100,7 @@ public partial class MainScene : Node3D
 		dimMusic.Add("Musique");
 		dimensionMusic.Add(dimMusic);
 		
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -129,6 +130,10 @@ public partial class MainScene : Node3D
 		}
 		calculMusique();
 		
+		if (Input.IsActionJustPressed("change_dimension")){
+			changeDimension();
+		}
+		
 	}
 	
 	public void calculMusique(){
@@ -150,7 +155,6 @@ public partial class MainScene : Node3D
 	
 	public void clearScene(){
 		this.RemoveChild(this.GetNode("./Road"));
-		this.RemoveChild(this.GetNode("./Spawner"));
 		this.RemoveChild(this.GetNode("./Portal"));
 		this.RemoveChild(this.GetNode(dimensionMusic[dimension][1]));
 	}
@@ -199,7 +203,6 @@ public partial class MainScene : Node3D
 		clearScene();
 		
 		addScene(dimensionRoad[dimension]);
-		addScene("res://Scene/Obstacle/spawner.tscn");
 		addScene(dimensionMusic[dimension][0]);
 		
 		score_buffer += 1000.0f * multiplier;
