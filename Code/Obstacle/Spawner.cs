@@ -145,7 +145,7 @@ public partial class Spawner : Node
 			
 			if (obstacle.Position.Z >= 10){
 				this.RemoveChild(obstacle);
-				if ((obstacle.Name == "Bonus1") | (obstacle.Name == "Bonus2") | (obstacle.Name == "Bonus3")){
+				if ((obstacle.Name == "Bonus1") | (obstacle.Name == "Bonus2") | (obstacle.Name =="Bonus3")){
 					nb_bonus-=1;
 				}else {
 					nb_obstacle-=1;

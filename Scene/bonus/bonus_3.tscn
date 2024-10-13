@@ -5,14 +5,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_uyfwn"]
 size = Vector3(5.28709, 3.05629, 0.358887)
 
-[node name="Bonus_3" type="Node3D"]
+[node name="Bonus3" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.005
 texture = ExtResource("1_aptvb")
 
-[node name="bonus3" type="StaticBody3D" parent="."]
+[node name="Bonus3" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bonus3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bonus3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0341894, 1.02814, -0.23637)
 shape = SubResource("BoxShape3D_uyfwn")

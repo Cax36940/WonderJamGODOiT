@@ -11,8 +11,8 @@ size = Vector3(3.72739, 3.05629, 0.358887)
 pixel_size = 0.005
 texture = ExtResource("1_75la6")
 
-[node name="Bonus" type="StaticBody3D" parent="."]
+[node name="Bonus1" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bonus"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bonus1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302476, 1.02814, -0.23637)
 shape = SubResource("BoxShape3D_s64ja")
