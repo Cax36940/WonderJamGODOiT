@@ -119,7 +119,8 @@ public partial class MainScene : Node3D
 		if (isTransition){
 			if (transitionTime <= 0){
 				changeDimension();
-				speed-=100+slowStage*multiplier;
+				speed-=100;
+				requiredspeed +=slowStage*multiplier
 				requiredBaseSpeed = requiredspeed;
 				baseSpeed = speed;
 				isTransition = false;
