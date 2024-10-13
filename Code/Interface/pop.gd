@@ -2,7 +2,7 @@ extends Node2D
 
 var speed : float = 200
 var init_posx : float = 700
-var error : float = 50
+var error : float = 30
 var is_current : bool = false
 var best : bool = false
 var hue : float = 0.5

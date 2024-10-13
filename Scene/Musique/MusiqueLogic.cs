@@ -15,7 +15,7 @@ public partial class MusiqueLogic : AudioStreamPlayer3D
 	{
 		songTime = this.GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
 		songTime -= AudioServer.GetOutputLatency();
-		if (songTime < 8){
+		if (songTime < 7){
 			MainScene.getInstance().setIsBeat(false);
 		}else if(songTime >55 && songTime <100){
 			MainScene.getInstance().setIsBeat(false);
