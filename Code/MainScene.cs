@@ -48,7 +48,7 @@ public partial class MainScene : Node3D
 		fact = 2;
 		dimension = 0;
 		accelerationMultiplier = 0.2f;
-		addScene("res://Scene/Musique/musiqueLogic.tscn");
+		addScene("res://Scene/Musique/musique3.tscn");
 		addScene("res://Scene/turtle/character_scene.tscn");
 		addScene("res://Scene/road/road.tscn");
 		addScene("res://Scene/Obstacle/spawner.tscn");
