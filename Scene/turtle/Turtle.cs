@@ -9,9 +9,7 @@ public partial class Turtle : CharacterBody3D
 	int pointForJauge = 10;
 
 	public override void _Process(double delta){
-			
-		
-			
+					
 		if (Input.IsActionPressed("ui_right")){
 			direction = 1;
 		}
@@ -19,9 +17,7 @@ public partial class Turtle : CharacterBody3D
 			direction = -1;
 		}
 		
-		
-		
-		
+	
 	}
 
 	public override void _PhysicsProcess(double delta)

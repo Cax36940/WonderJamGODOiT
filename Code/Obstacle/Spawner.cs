@@ -87,10 +87,12 @@ public partial class Spawner : Node
 		cycle_obstacle+= (float)delta;
 		cycle_bonus+= (float)delta;
 		
-		distElapsed+= (float)delta*MainScene.getInstance().getSpeed();
-		distElapsedBonus+= (float)delta*MainScene.getInstance().getSpeed();;	
+			
 		
 		if(!MainScene.getInstance().istransition()){
+			distElapsed+= (float)delta*MainScene.getInstance().getSpeed();
+			distElapsedBonus+= (float)delta*MainScene.getInstance().getSpeed();
+			
 			if (distElapsed >= distBetween){
 				distElapsed-=distBetween;
 				spawnObstacle((dimensionObstacle[MainScene.getInstance().getDimension()].PickRandom()));
