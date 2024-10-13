@@ -75,7 +75,7 @@ public partial class MainScene : Node3D
 		dimensionMusic.Add(dimMusic);
 		//dim 2
 		dimMusic = new Godot.Collections.Array<string>();
-		dimMusic.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic.Add("res://Scene/Musique/musique2.tscn");
 		dimMusic.Add("Musique");
 		dimensionMusic.Add(dimMusic);
 		//dim 3
@@ -241,6 +241,10 @@ public partial class MainScene : Node3D
 	}
 	public float getBPM(){
 		return (float)bpm;
+	}
+	
+	public void setBPM(int newbpm){
+		bpm = newbpm;
 	}
 	
 	public bool getIsBeat(){
