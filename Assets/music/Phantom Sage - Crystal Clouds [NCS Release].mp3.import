@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7rf05ulajxv4"
+path="res://.godot/imported/Phantom Sage - Crystal Clouds [NCS Release].mp3-0477d597299ced3e5f050259630f5104.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/Phantom Sage - Crystal Clouds [NCS Release].mp3"
+dest_files=["res://.godot/imported/Phantom Sage - Crystal Clouds [NCS Release].mp3-0477d597299ced3e5f050259630f5104.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
