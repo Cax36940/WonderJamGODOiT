@@ -215,7 +215,7 @@ public partial class MainScene : Node3D
 	
 	public void death(){
 		GD.Print("Now you're dead you filthy casual ");
-		SetProcessMode();
+		//SetProcessMode(GD.PROCESS_MODE_DISABLED);
 	}
 	
 	public float getSpeed(){
