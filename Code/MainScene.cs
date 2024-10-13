@@ -111,16 +111,17 @@ public partial class MainScene : Node3D
 		requiredspeed += (float)delta*accelerationMultiplier;
 		jauge = (speed-baseSpeed)/(requiredspeed-requiredBaseSpeed);
 		
-		if (speed>=requiredspeed){	
+		if (speed>=requiredspeed && !isTransition){	
 			startTransition();
-			speed-=100+slowStage*multiplier;
-			requiredBaseSpeed = requiredspeed;
-			baseSpeed = speed;
+			
 			}
 		
 		if (isTransition){
 			if (transitionTime <= 0){
 				changeDimension();
+				speed-=100+slowStage*multiplier;
+				requiredBaseSpeed = requiredspeed;
+				baseSpeed = speed;
 				isTransition = false;
 				isBeat=true;
 			}else {
