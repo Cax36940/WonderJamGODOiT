@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1ywqhpkpktkc"]
+[gd_scene load_steps=14 format=3 uid="uid://b1ywqhpkpktkc"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_1t0kp"]
 [ext_resource type="Texture2D" uid="uid://dgfm67duguns1" path="res://Assets/2D/UI/menu.png" id="1_60g7i"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://fypj7vwaj706" path="res://Assets/2D/UI/buttons_play2.png" id="4_8s0ap"]
 [ext_resource type="Texture2D" uid="uid://jp4foayu2cod" path="res://Assets/2D/UI/buttons_play3.png" id="5_hev2y"]
 [ext_resource type="Texture2D" uid="uid://bvqxip3iloaja" path="res://Assets/2D/UI/buttons_quit1.png" id="5_u7wu8"]
-[ext_resource type="Texture2D" uid="uid://cw4ph2pmo540f" path="res://icon.svg" id="6_8q7gl"]
 [ext_resource type="Texture2D" uid="uid://dfcm38biibs2b" path="res://Assets/2D/UI/buttons_quit2.png" id="6_kk7gc"]
+[ext_resource type="Texture2D" uid="uid://cxbs7m8x0x01u" path="res://Assets/2D/UI/buttons_replay1.png" id="6_s7yoi"]
+[ext_resource type="Texture2D" uid="uid://cdfpx6e0od5ce" path="res://Assets/2D/UI/buttons_replay2.png" id="7_cue4x"]
+[ext_resource type="Texture2D" uid="uid://bhcv50i81ab47" path="res://Assets/2D/UI/buttons_replay3.png" id="8_msh5q"]
 [ext_resource type="Texture2D" uid="uid://bfe2h7xmffrx0" path="res://Assets/2D/UI/buttons_quit3.png" id="8_n2uqr"]
 
 [node name="Screen" type="Control"]
@@ -36,23 +38,28 @@ texture = ExtResource("2_vtmu1")
 
 [node name="Quit" type="TextureButton" parent="Death"]
 layout_mode = 0
-offset_left = 383.0
-offset_top = 431.0
-offset_right = 883.0
-offset_bottom = 631.0
+offset_left = 450.0
+offset_top = 450.0
+offset_right = 950.0
+offset_bottom = 650.0
+scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("5_u7wu8")
 texture_pressed = ExtResource("6_kk7gc")
 texture_hover = ExtResource("8_n2uqr")
 
 [node name="Replay" type="TextureButton" parent="Death"]
 layout_mode = 0
-offset_left = 577.0
-offset_top = 314.0
-offset_right = 705.0
-offset_bottom = 442.0
-texture_normal = ExtResource("6_8q7gl")
+offset_left = 450.0
+offset_top = 300.0
+offset_right = 950.0
+offset_bottom = 500.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("6_s7yoi")
+texture_pressed = ExtResource("7_cue4x")
+texture_hover = ExtResource("8_msh5q")
 
 [node name="Menu" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

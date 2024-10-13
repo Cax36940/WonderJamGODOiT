@@ -13,7 +13,8 @@ config_version=5
 config/name="WonderJamGODOiT"
 run/main_scene="res://Scene/Interface/menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="res://Assets/2D/UI/icon.png"
 
 [autoload]
 
