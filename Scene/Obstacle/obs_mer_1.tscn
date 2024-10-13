@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3i4bi8anpes2"]
+
+[ext_resource type="Texture2D" uid="uid://bmrnitjocic5m" path="res://Assets/2D/obstacle/tile_mer.png" id="1_fyfy7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfn5e"]
+size = Vector3(1.89404, 4.35596, 1)
+
+[node name="Node3D2" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52001, 0)
+alpha_cut = 1
+texture = ExtResource("1_fyfy7")
+region_enabled = true
+region_rect = Rect2(125.472, 166.905, 326.043, 414.939)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0396566, 1.67798, 0)
+shape = SubResource("BoxShape3D_lfn5e")

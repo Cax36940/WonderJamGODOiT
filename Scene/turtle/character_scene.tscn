@@ -1,10 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://ca120vbfbdnvh"]
+[gd_scene load_steps=4 format=3 uid="uid://ca120vbfbdnvh"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_l3v63"]
+[ext_resource type="PackedScene" uid="uid://klqttley0f0p" path="res://Assets/turtle.glb" id="1_26241"]
+[ext_resource type="Script" path="res://Scene/turtle/Turtle.cs" id="1_fl03i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fd5qn"]
+radius = 0.493928
 
 [node name="CharacterScene" type="Node3D"]
 
 [node name="Turtle" type="CharacterBody3D" parent="."]
+script = ExtResource("1_fl03i")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Turtle"]
-shape = SubResource("SphereShape3D_l3v63")
+[node name="turtle" parent="Turtle" instance=ExtResource("1_26241")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionTurtle" type="Area3D" parent="Turtle"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Turtle/CollisionTurtle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("SphereShape3D_fd5qn")
+
+[connection signal="body_entered" from="Turtle/CollisionTurtle" to="Turtle" method="collideObject"]

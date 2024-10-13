@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://j8cs1hhc02b7"]
+
+[ext_resource type="Script" path="res://Scene/Musique/Musique3.cs" id="1_2r7pi"]
+[ext_resource type="AudioStream" uid="uid://ctrj23s1cyshw" path="res://Assets/music/Y&V - Lune [NCS Release].mp3" id="1_7iklr"]
+
+[node name="Musique" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_7iklr")
+autoplay = true
+script = ExtResource("1_2r7pi")

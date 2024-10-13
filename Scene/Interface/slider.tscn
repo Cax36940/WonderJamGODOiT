@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxe00o3msgngq"]
+
+[ext_resource type="Script" path="res://Code/Interface/slider.gd" id="1_dok3f"]
+[ext_resource type="Texture2D" uid="uid://bah0nol1sdds6" path="res://Assets/2D/UI/bar.png" id="2_6idpc"]
+[ext_resource type="Texture2D" uid="uid://cw4ph2pmo540f" path="res://icon.svg" id="4_w52v4"]
+
+[node name="Slider" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dok3f")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(640, 720)
+scale = Vector2(3, 3)
+texture = ExtResource("2_6idpc")
+
+[node name="Spawner" type="Node2D" parent="."]
+
+[node name="Mask" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(32, 656.5)
+scale = Vector2(0.15625, 0.726562)
+texture = ExtResource("4_w52v4")
+
+[node name="Mask2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1250, 654)
+scale = Vector2(0.15625, 0.726562)
+texture = ExtResource("4_w52v4")

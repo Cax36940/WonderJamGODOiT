@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bst5x3x2wouln"]
+
+[ext_resource type="Script" path="res://Scene/Obstacle/Border.cs" id="1_12jam"]
+
+[node name="Border" type="Node3D"]
+script = ExtResource("1_12jam")

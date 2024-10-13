@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfysvoxrw7p2e"]
+
+[ext_resource type="Script" path="res://Code/Road/tiling_synt.gd" id="1_uk0of"]
+[ext_resource type="Texture2D" uid="uid://caokndwnaldx4" path="res://Assets/2D/background/background_synth.png" id="2_kah1n"]
+[ext_resource type="Shader" path="res://Assets/2D/road/syntwave.gdshader" id="3_kmpdl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g7mv"]
+albedo_texture = ExtResource("2_kah1n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_114es"]
+render_priority = 0
+shader = ExtResource("3_kmpdl")
+shader_parameter/battery = 1.0
+shader_parameter/anchor = -0.5
+shader_parameter/speed_scale = 1.0
+shader_parameter/fov = 0.2
+shader_parameter/background_color = Vector4(0, 0.1, 0.2, 1)
+shader_parameter/grid_color = Vector4(1, 0.5, 1, 1)
+shader_parameter/translation_speed = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tblu6"]
+
+[node name="Road" type="Node3D"]
+
+[node name="Tiling" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+script = ExtResource("1_uk0of")
+
+[node name="Background" type="Sprite3D" parent="Tiling"]
+transform = Transform3D(1.52, 0, 0, 0, 1.52, 0, 0, 0, 1.52, -18.6323, 177.091, -477.8)
+material_override = SubResource("StandardMaterial3D_7g7mv")
+pixel_size = 0.6
+texture = ExtResource("2_kah1n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tiling"]
+transform = Transform3D(-250, 0, -2.18557e-05, 0, 250, 0, 2.18557e-05, 0, -250, 0, 0, -250)
+material_override = SubResource("ShaderMaterial_114es")
+mesh = SubResource("PlaneMesh_tblu6")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 106, 0)

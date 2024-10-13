@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128px"
+   height="720px"
+   viewBox="0 0 128 720"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="AccelerationBarFill.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview261"
+     pagecolor="#ffffff"
+     bordercolor="#ffffff"
+     borderopacity="0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.0444209"
+     inkscape:cx="-182.87646"
+     inkscape:cy="345.64608"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs256">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1204">
+      <stop
+         style="stop-color:#ff0000;stop-opacity:1;"
+         offset="0"
+         id="stop1200" />
+      <stop
+         style="stop-color:#fbff00;stop-opacity:1;"
+         offset="0.5"
+         id="stop1208" />
+      <stop
+         style="stop-color:#0cff00;stop-opacity:1;"
+         offset="1"
+         id="stop1202" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1204"
+       id="linearGradient1206"
+       x1="184.07289"
+       y1="820.55042"
+       x2="179.76509"
+       y2="147.45013"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.9063263,0,0,0.98250271,-98.150783,-104.67979)" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="display:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.76819"
+       id="rect1079"
+       width="132.69833"
+       height="719.00836"
+       x="5.7424114e-07"
+       y="1.3540649"
+       ry="0.020095343" />
+    <path
+       style="display:none;fill:none;stroke:#ffffff;stroke-width:3.76819;stroke-dasharray:none;stroke-opacity:1"
+       d="M 2,55 18,36 h 92 l 16,19 2.5e-4,627 -15.4978,19 H 70 L 51,682.44864 Z"
+       id="path539"
+       sodipodi:nodetypes="ccccccccc" />
+    <path
+       style="fill:url(#linearGradient1206);fill-opacity:1;stroke:#ffffff;stroke-width:15.4037;stroke-dasharray:none;stroke-opacity:0"
+       d="M 6.9986886,57.134265 20.303073,41.81785 l 87.211907,0 12.82564,15.795149 2.3e-4,621.774071 -12.60987,15.79513 H 72.937486 L 56.196019,678.63102 Z"
+       id="path539-5"
+       sodipodi:nodetypes="ccccccccc" />
+  </g>
+</svg>

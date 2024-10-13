@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctrj23s1cyshw"
+path="res://.godot/imported/Y&V - Lune [NCS Release].mp3-51d82e38d32902d7cb7ca96dfaf1a799.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/Y&V - Lune [NCS Release].mp3"
+dest_files=["res://.godot/imported/Y&V - Lune [NCS Release].mp3-51d82e38d32902d7cb7ca96dfaf1a799.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

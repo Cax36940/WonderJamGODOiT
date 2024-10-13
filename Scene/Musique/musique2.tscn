@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba6vqu02vsstj"]
+
+[ext_resource type="AudioStream" uid="uid://b0kkx4to1jp4b" path="res://Assets/music/Inukshuk - Too Far Gone [NCS Release].mp3" id="1_82mej"]
+[ext_resource type="Script" path="res://Scene/Musique/Musique2.cs" id="1_vpge5"]
+
+[node name="Musique" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_82mej")
+autoplay = true
+script = ExtResource("1_vpge5")

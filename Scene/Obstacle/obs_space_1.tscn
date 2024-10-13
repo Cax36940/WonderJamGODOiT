@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw8quekyvqmwi"]
+
+[ext_resource type="Texture2D" uid="uid://ciwum8hdfmic" path="res://Assets/2D/obstacle/tile_space.png" id="1_yej08"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfn5e"]
+size = Vector3(3.72739, 3.05629, 0.358887)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.34067, 0)
+alpha_cut = 1
+texture = ExtResource("1_yej08")
+hframes = 2
+vframes = 2
+
+[node name="Obstacle" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299179, 1.02814, -0.23637)
+shape = SubResource("BoxShape3D_lfn5e")
