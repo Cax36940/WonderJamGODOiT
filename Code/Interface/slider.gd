@@ -23,7 +23,7 @@ func _process(delta):
 func create_pop():
 	var pop : Node2D = pop_scene.instantiate()
 	pop.speed = pop_speed
-	pop.position = $Icon.position
+	pop.position = Vector2(640, 654)
 	$Spawner.add_child(pop)
 	$Spawner.get_child(0).is_current = true
 
