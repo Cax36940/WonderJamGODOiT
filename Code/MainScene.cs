@@ -135,7 +135,7 @@ public partial class MainScene : Node3D
 		calculMusique();
 		
 		if (Input.IsActionJustPressed("change_dimension")){
-			changeDimension();
+			//changeDimension();
 		}
 		
 	}
