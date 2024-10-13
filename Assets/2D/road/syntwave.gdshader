@@ -30,5 +30,5 @@ void fragment() {
     float gridVal = grid(uv, battery);
     col = mix(background_color, grid_color, gridVal);
 	ALBEDO = col.rgb;
-	
+
 }
