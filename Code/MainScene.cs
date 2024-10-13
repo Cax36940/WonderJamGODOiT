@@ -22,7 +22,7 @@ public partial class MainScene : Node3D
 	
 	
 	Godot.Collections.Array<string> dimensionRoad = new Godot.Collections.Array<string>();
-	Godot.Collections.Array<string> dimensionMusic = new Godot.Collections.Array<string>();
+	Godot.Collections.Array<Godot.Collections.Array<string>> dimensionMusic = new Godot.Collections.Array<Godot.Collections.Array<string>>();
 	
 	static MainScene instance; 
 	
@@ -69,15 +69,30 @@ public partial class MainScene : Node3D
 		//Musique
 		
 		//dim 1
-		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
+		Godot.Collections.Array<string> dimMusic = new Godot.Collections.Array<string>();
+		dimMusic.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic.Add("Musique");
+		dimensionMusic.Add(dimMusic);
 		//dim 2
-		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic = new Godot.Collections.Array<string>();
+		dimMusic.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic.Add("Musique");
+		dimensionMusic.Add(dimMusic);
 		//dim 3
-		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic = new Godot.Collections.Array<string>();
+		dimMusic.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic.Add("Musique");
+		dimensionMusic.Add(dimMusic);
 		//dim 4
-		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic = new Godot.Collections.Array<string>();
+		dimMusic.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic.Add("Musique");
+		dimensionMusic.Add(dimMusic);
 		//dim 5
-		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic = new Godot.Collections.Array<string>();
+		dimMusic.Add("res://Scene/Musique/musiqueLogic.tscn");
+		dimMusic.Add("Musique");
+		dimensionMusic.Add(dimMusic);
 		
 	}
 
@@ -108,7 +123,7 @@ public partial class MainScene : Node3D
 	}
 	
 	public void calculMusique(){
-		songTime = ((AudioStreamPlayer3D)this.GetNode("./Musique")).GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
+		songTime = ((AudioStreamPlayer3D)this.GetNode(dimensionMusic[dimension][1])).GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
 		songTime -= AudioServer.GetOutputLatency();
 	}
 	
@@ -128,7 +143,7 @@ public partial class MainScene : Node3D
 		this.RemoveChild(this.GetNode("./Road"));
 		this.RemoveChild(this.GetNode("./Spawner"));
 		this.RemoveChild(this.GetNode("./Portal"));
-		this.RemoveChild(this.GetNode("./Musique"));
+		this.RemoveChild(this.GetNode(dimensionMusic[dimension][1]));
 	}
 	
 	
@@ -174,7 +189,7 @@ public partial class MainScene : Node3D
 		
 		addScene(dimensionRoad[dimension]);
 		addScene("res://Scene/Obstacle/spawner.tscn");
-		addScene("res://Scene/Musique/musiqueLogic.tscn");
+		addScene(dimensionMusic[dimension][0]);
 		
 		score_buffer += 1000.0f * multiplier;
 		multiplier *= fact;
@@ -230,6 +245,12 @@ public partial class MainScene : Node3D
 	
 	public bool getIsBeat(){
 		return isBeat;
+	}
+	
+	public void setIsBeat(bool itIs){
+		if(!isTransition){
+			isBeat = itIs;
+		}
 	}
 	
 	
