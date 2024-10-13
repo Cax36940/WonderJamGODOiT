@@ -5,21 +5,14 @@ public partial class Border : Node3D
 {
 	int current_dimension = -1;
 	Godot.Collections.Array<PackedScene> borderScene = new Godot.Collections.Array<PackedScene>();
-	Godot.Collections.Array<float> borderDist = new Godot.Collections.Array<float>();
-	// Called when the node enters the scene tree for the first time.
+// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence.tscn"));
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/world_2_fence.tscn"));
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence3.tscn"));
+		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence4.tscn"));
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence.tscn"));
-		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence.tscn"));
-		
-		borderDist.Add(4.3f);
-		borderDist.Add(2.62f);
-		borderDist.Add(4.3f);
-		borderDist.Add(4.3f);
-		borderDist.Add(4.3f);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

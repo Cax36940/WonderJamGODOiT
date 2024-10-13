@@ -63,10 +63,10 @@ public partial class Spawner : Node
 		obstacleForDimension.Clear();
 		
 		//Ajout 4 obstacles pour dim 4:
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
-		obstacleForDimension.Add("res://Scene/Obstacle/obstacle_test.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_roadtrip_1.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_roadtrip_2.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_roadtrip_3.tscn");
+		obstacleForDimension.Add("res://Scene/Obstacle/obs_roadtrip_4.tscn");
 		
 		dimensionObstacle.Add(new Godot.Collections.Array<string>(obstacleForDimension));
 		obstacleForDimension.Clear();
