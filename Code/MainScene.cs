@@ -91,12 +91,12 @@ public partial class MainScene : Node3D
 		dimensionMusic.Add(dimMusic);
 		//dim 4
 		dimMusic = new Godot.Collections.Array<string>();
-		dimMusic.Add("res://Scene/Musique/musique3.tscn");
+		dimMusic.Add("res://Scene/Musique/musique4.tscn");
 		dimMusic.Add("Musique");
 		dimensionMusic.Add(dimMusic);
 		//dim 5
 		dimMusic = new Godot.Collections.Array<string>();
-		dimMusic.Add("res://Scene/Musique/musique3.tscn");
+		dimMusic.Add("res://Scene/Musique/musique5.tscn");
 		dimMusic.Add("Musique");
 		dimensionMusic.Add(dimMusic);
 		
