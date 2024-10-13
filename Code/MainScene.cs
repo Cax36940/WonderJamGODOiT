@@ -5,7 +5,6 @@ public partial class MainScene : Node3D
 {
 	float accelerationMultiplier;
 	float speed;
-	float breachbarrier;
 	float score_buffer;
 	int multiplier;
 	int fact;
@@ -33,7 +32,6 @@ public partial class MainScene : Node3D
 		GD.Print("ready");
 		GD.Print(bpm/60);
 		speed = 20;
-		breachBarrier=120;
 		score_buffer = 0;
 		jauge = 0;
 		multiplier = 1;
@@ -136,11 +134,14 @@ public partial class MainScene : Node3D
 	
 	public void highSuccess(){
 		jauge+=hsuccess;
+		score_buffer+=50*multiplier;
 		GD.Print("High Success");
+		
 	}
 	
 	public void success(){
 		jauge+=lsuccess;
+		score_buffer+=50*2*multiplier;
 		GD.Print("Low Success");
 	}
 	
