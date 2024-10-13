@@ -3,6 +3,8 @@ using System;
 
 public partial class Musique3 : AudioStreamPlayer3D
 {
+	// Lune
+	
 	double songTime = 0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -17,17 +19,17 @@ public partial class Musique3 : AudioStreamPlayer3D
 		songTime -= AudioServer.GetOutputLatency();
 		if(songTime < 11.5){
 			MainScene.getInstance().setIsBeat(false);
-		}if(songTime >11.5 && songTime <44.5){
+		}if(songTime >10.1 && songTime <44.5){
 			MainScene.getInstance().setIsBeat(true);
 			MainScene.getInstance().setBPM(38);
 		}if(songTime >44.5 && songTime <50){
 			MainScene.getInstance().setIsBeat(false);
-		}if(songTime >50.5 && songTime <90){
+		}if(songTime >50 && songTime <90){
 			MainScene.getInstance().setIsBeat(true);
 			MainScene.getInstance().setBPM(75);
 		}if(songTime >90 && songTime <199.5){
 			MainScene.getInstance().setIsBeat(false);
-		}if(songTime >99.5 && songTime <180){
+		}if(songTime >99.2 && songTime <180){
 			MainScene.getInstance().setIsBeat(true);
 			MainScene.getInstance().setBPM(75);
 		}if(songTime >180 && songTime <232){

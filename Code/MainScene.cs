@@ -24,6 +24,7 @@ public partial class MainScene : Node3D
 	bool isTransition = false;
 	bool isBeat = true;
 	
+	bool is_dead = false;
 	
 	Godot.Collections.Array<string> dimensionRoad = new Godot.Collections.Array<string>();
 	Godot.Collections.Array<Godot.Collections.Array<string>> dimensionMusic = new Godot.Collections.Array<Godot.Collections.Array<string>>();
@@ -144,6 +145,14 @@ public partial class MainScene : Node3D
 		songTime -= AudioServer.GetOutputLatency();
 	}
 	
+	public bool isDead(){
+		return is_dead;
+	}
+	
+	public void setDead(bool new_bool){
+		is_dead = new_bool;
+	}
+	
 	public void addScene(string path){
 		var newScene = GD.Load<PackedScene>(path).Instantiate();
 		this.AddChild(newScene);
@@ -215,6 +224,7 @@ public partial class MainScene : Node3D
 	
 	public void death(){
 		GD.Print("Now you're dead you filthy casual ");
+		is_dead = true;
 		//SetProcessMode(GD.PROCESS_MODE_DISABLED);
 	}
 	
