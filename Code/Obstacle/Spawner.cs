@@ -10,6 +10,10 @@ public partial class Spawner : Node
 	int max_bonus = 15;
 	int nb_obstacle = 0;
 	float cycle_obstacle = 0;
+	float distElapsed =0;
+	float distElapsedBonus=0;
+	float distBetweenBonus = 105;
+	float distBetween = 60;
 	Godot.Collections.Array<Godot.Collections.Array<string>> dimensionObstacle = new Godot.Collections.Array<Godot.Collections.Array<string>>();
 	Godot.Collections.Array<string> bonus = new Godot.Collections.Array<string>();
 	
@@ -82,13 +86,19 @@ public partial class Spawner : Node
 	{
 		cycle_obstacle+= (float)delta;
 		cycle_bonus+= (float)delta;
+		
+		distElapsed+= (float)delta*MainScene.getInstance().getSpeed();
+		distElapsedBonus+= (float)delta*MainScene.getInstance().getSpeed();;	
+		
 		if(!MainScene.getInstance().istransition()){
-			if (cycle_obstacle>1){
-				spawnObstacle(dimensionObstacle[MainScene.getInstance().getDimension()].PickRandom());
-				cycle_obstacle = 0;
-			}if (cycle_bonus>2.5f){
+			if (distElapsed >= distBetween){
+				distElapsed-=distBetween;
+				spawnObstacle((dimensionObstacle[MainScene.getInstance().getDimension()].PickRandom()));
+			}
+			
+			if (distElapsedBonus>=distBetweenBonus){
+				distElapsedBonus-=distBetweenBonus;
 				spawnBonus(bonus.PickRandom());
-				cycle_bonus = 0.5f;
 			}
 		}	
 	}
@@ -146,7 +156,11 @@ public partial class Spawner : Node
 			
 			if (obstacle.Position.Z >= 10){
 				this.RemoveChild(obstacle);
-				if ((obstacle.Name == "Bonus1") | (obstacle.Name == "Bonus2") | (obstacle.Name =="Bonus3")){
+				if (obstacle.Name == "Bonus1")    {
+					nb_bonus-=1;
+				}else if(obstacle.Name == "Bonus2"){
+					nb_bonus-=1;
+				}else if(obstacle.Name =="Bonus3"){
 					nb_bonus-=1;
 				}else {
 					nb_obstacle-=1;

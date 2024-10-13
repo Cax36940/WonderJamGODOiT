@@ -52,15 +52,15 @@ public partial class Turtle : CharacterBody3D
 		
 		if (area.Name == "Bonus1"){
 			MainScene.getInstance().addBonus(1);
-			area.GetParent().QueueFree();
+			area.GetParent().Set(Node3D.PropertyName.Visible, false);
 			
 		}else if (area.Name == "Bonus2"){
 			MainScene.getInstance().addBonus(2);
-			area.GetParent().QueueFree();
+			area.GetParent().Set(Node3D.PropertyName.Visible, false);
 			
 		}else if(area.Name == "Bonus3"){
 			MainScene.getInstance().addBonus(3);
-			area.GetParent().QueueFree();
+			area.GetParent().Set(Node3D.PropertyName.Visible, false);
 			
 		}else{
 			MainScene.getInstance().death();
