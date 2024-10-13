@@ -14,8 +14,8 @@ public partial class MainScene : Node3D
 	int fact;
 	int dimension;
 	float jauge;
-	int hsuccess = 10;
-	int lsuccess = 5;
+	int hsuccess = 5;
+	int lsuccess = 2;
 	int failure = -2;
 	int bpm = 85;
 	double songTime = 0;
@@ -158,14 +158,14 @@ public partial class MainScene : Node3D
 	
 	
 	public void highSuccess(){
-		speed+=hsuccess;
+		speed+=((requiredspeed-baseSpeed)/bpm)*hsuccess;
 		score_buffer+=50*multiplier;
 		GD.Print("High Success");
 		
 	}
 	
 	public void success(){
-		speed+=lsuccess;
+		speed+=((requiredspeed-baseSpeed)/bpm)*lsuccess;
 		score_buffer+=50*2*multiplier;
 		GD.Print("Low Success");
 	}
