@@ -38,7 +38,6 @@ public partial class MainScene : Node3D
 		speed = 20;
 		baseSpeed = 20;
 		requiredspeed = 120;
-		requiredBaseSpeed = 120;
 		score_buffer = 0;
 		jauge = 0;
 		multiplier = 1;
@@ -108,8 +107,9 @@ public partial class MainScene : Node3D
 	{
 		score_buffer += (float)delta*speed*multiplier;
 		speed+= (float)delta*accelerationMultiplier;
+		baseSpeed+= (float)delta*accelerationMultiplier;
 		requiredspeed += (float)delta*accelerationMultiplier;
-		jauge = (speed-baseSpeed)/(requiredspeed-requiredBaseSpeed);
+		jauge = (speed-baseSpeed)/(requiredspeed-baseSpeed);
 		
 		if (speed>=requiredspeed && !isTransition){	
 			startTransition();
@@ -119,10 +119,8 @@ public partial class MainScene : Node3D
 		if (isTransition){
 			if (transitionTime <= 0){
 				changeDimension();
-				speed-=100;
-				requiredspeed +=slowStage*multiplier
-				requiredBaseSpeed = requiredspeed;
-				baseSpeed = speed;
+				speed=baseSpeed;
+				requiredspeed +=slowStage*multiplier;
 				isTransition = false;
 				isBeat=true;
 			}else {
@@ -147,7 +145,7 @@ public partial class MainScene : Node3D
 	public void startTransition(){
 		isBeat=false;
 		isTransition=true;
-		transitionTime=5;
+		transitionTime=3;
 		addScene("res://Scene/background/portal.tscn");
 	}
 	
@@ -269,6 +267,14 @@ public partial class MainScene : Node3D
 		if(!isTransition){
 			isBeat = itIs;
 		}
+	}
+	
+	public float getBaseSpeed(){
+		return baseSpeed;
+	}
+	
+	public bool istransition(){
+		return isTransition;
 	}
 	
 	

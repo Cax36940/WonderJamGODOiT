@@ -14,7 +14,7 @@ public partial class PortalV2 : Node3D
 	{
 		Vector3 pos =(Vector3) this.Get(Node3D.PropertyName.Position);		
 			
-		pos.Z =((5-MainScene.getInstance().getTransitionTime())*40)-200;
+		pos.Z =((3-MainScene.getInstance().getTransitionTime())*(200/3))-200;
 		
 		this.Set(Node3D.PropertyName.Position,pos);
 		

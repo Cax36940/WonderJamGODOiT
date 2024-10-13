@@ -18,7 +18,7 @@ public partial class Camera3d : Camera3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		this.Set(Camera3D.PropertyName.Fov, minFov + 0.4f*(100/(MainScene.getInstance().getSpeed()/8)));
+		this.Set(Camera3D.PropertyName.Fov, minFov + 0.4f*(100/(MainScene.getInstance().getBaseSpeed()/8)));
 		
 		
 		Vector3 pos =(Vector3) this.Get(Node3D.PropertyName.Position);		
@@ -26,9 +26,9 @@ public partial class Camera3d : Camera3D
 		Vector3 diff = pos - ReferencePoint;
 		
 		if(pos.Z <= 11.5){
-			pos.Z += 0.00005f*(MainScene.getInstance().getSpeed());
+			pos.Z += 0.00005f*(MainScene.getInstance().getBaseSpeed());
 		}else if(pos.Y >= 2.6){
-			pos.Y -= 0.00001f*(MainScene.getInstance().getSpeed());
+			pos.Y -= 0.00001f*(MainScene.getInstance().getBaseSpeed());
 		}
 		
 			

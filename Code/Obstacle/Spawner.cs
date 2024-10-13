@@ -82,14 +82,15 @@ public partial class Spawner : Node
 	{
 		cycle_obstacle+= (float)delta;
 		cycle_bonus+= (float)delta;
-		if (cycle_obstacle>1){
-			spawnObstacle(dimensionObstacle[MainScene.getInstance().getDimension()].PickRandom());
-			cycle_obstacle = 0;
-		}if (cycle_bonus>2.5f){
-			spawnBonus(bonus.PickRandom());
-			cycle_bonus = 0.5f;
-		}
-			
+		if(!MainScene.getInstance().istransition()){
+			if (cycle_obstacle>1){
+				spawnObstacle(dimensionObstacle[MainScene.getInstance().getDimension()].PickRandom());
+				cycle_obstacle = 0;
+			}if (cycle_bonus>2.5f){
+				spawnBonus(bonus.PickRandom());
+				cycle_bonus = 0.5f;
+			}
+		}	
 	}
 	
 	public override void _PhysicsProcess(double delta){
