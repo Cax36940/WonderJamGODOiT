@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Code/Interface/hud.gd" id="1_0rilc"]
 [ext_resource type="FontFile" uid="uid://bjjfelhwini4n" path="res://Assets/Interface/Angels.ttf" id="2_dex0c"]
 [ext_resource type="PackedScene" uid="uid://dxe00o3msgngq" path="res://Scene/Interface/slider.tscn" id="3_y5pll"]
-[ext_resource type="PackedScene" uid="uid://cw36d4x5osfp7" path="res://Scene/Interface/jauge.tscn" id="4_c58e5"]
+[ext_resource type="PackedScene" path="res://Scene/Interface/jauge.tscn" id="4_c58e5"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
