@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3an87ucd861q"]
-
-[ext_resource type="AudioStream" uid="uid://bwdwdb0ip7wqn" path="res://Assets/music/Aisake, Dosi - Cruising [NCS Release].mp3" id="1_ed33d"]
-
-[node name="Musique" type="AudioStreamPlayer3D"]
-stream = ExtResource("1_ed33d")
-volume_db = 30.0
-autoplay = true

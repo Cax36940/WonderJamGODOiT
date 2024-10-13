@@ -18,9 +18,7 @@ public partial class Turtle : CharacterBody3D
 		if (Input.IsActionPressed("ui_left")){
 			direction = -1;
 		}
-		if (Input.IsActionJustPressed("leap")){
-			dimensionLeap();
-		}
+		
 		
 		
 		
@@ -47,16 +45,7 @@ public partial class Turtle : CharacterBody3D
 		
 	}
 	
-	public void dimensionLeap(){
-		
-		
-		if (MainScene.getInstance().getTimeAfterSound()> 0){
-			MainScene.getInstance().setJauge(MainScene.getInstance().getJauge()+pointForJauge);
-			GD.Print("Tuuuurrbooooooo!!!!");
-		}else {
-			GD.Print("Not the time");
-		}
-	}
+	
 	
 	public void collideObject(Node3D area){
 		GD.Print(area.Name);

@@ -5,17 +5,23 @@ public partial class MainScene : Node3D
 {
 	float accelerationMultiplier;
 	float speed;
+	float breachbarrier;
 	float score_buffer;
 	int multiplier;
 	int fact;
 	int dimension;
 	int jauge;
+	int hsuccess = 10;
+	int lsuccess = 5;
+	int failure = -2;
+	int bpm = 85;
+	double songTime = 0;
+	
 	float transitionTime = 0;
 	bool isTransition = false;
-	float timingForSpace = 0.5f ;
-	float timeAfterSound = 0;
-	float timingBPM = 3;
-	float timeSinceLastSound = 0;
+	bool isBeat = true;
+	
+	
 	Godot.Collections.Array<string> dimensionRoad = new Godot.Collections.Array<string>();
 	Godot.Collections.Array<string> dimensionMusic = new Godot.Collections.Array<string>();
 	
@@ -25,20 +31,23 @@ public partial class MainScene : Node3D
 	public override void _Ready()
 	{
 		GD.Print("ready");
+		GD.Print(bpm/60);
 		speed = 20;
+		breachBarrier=120;
 		score_buffer = 0;
 		jauge = 0;
 		multiplier = 1;
 		fact = 2;
 		dimension = 0;
 		accelerationMultiplier = 0.5f;
+		addScene("res://Scene/Musique/musiqueLogic.tscn");
 		addScene("res://Scene/turtle/character_scene.tscn");
 		addScene("res://Scene/road/road.tscn");
 		addScene("res://Scene/Obstacle/spawner.tscn");
 		addScene("res://Scene/environnement.tscn");
 		addScene("res://Scene/Obstacle/border.tscn");
 		addScene("res://Scene/Interface/hud.tscn");
-		addScene("res://Scene/Musique/musique_dim_1.tscn");
+		
 		instance = this;
 		loadDimensionList();
 		
@@ -62,15 +71,15 @@ public partial class MainScene : Node3D
 		//Musique
 		
 		//dim 1
-		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
+		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
 		//dim 2
-		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
+		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
 		//dim 3
-		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
+		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
 		//dim 4
-		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
+		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
 		//dim 5
-		dimensionRoad.Add("res://Scene/Musique/musique_dim_1.tscn");
+		dimensionRoad.Add("res://Scene/Musique/musiqueLogic.tscn");
 		
 	}
 
@@ -79,33 +88,30 @@ public partial class MainScene : Node3D
 	{
 		score_buffer += (float)delta*speed*multiplier;
 		speed+= (float)delta*accelerationMultiplier;
+	
 		
 		if (jauge>=100){	
 			startTransition();
 			jauge = 0;
 			}
-			
+		
 		if (isTransition){
 			if (transitionTime <= 0){
 				changeDimension();
 				isTransition = false;
+				isBeat=true;
 			}else {
 				transitionTime-= (float)delta;
 			}
 			
 		}
-		if (timeSinceLastSound > timingBPM){
-			timeAfterSound = timingForSpace;
-			timeSinceLastSound=0;
-			GD.Print("Space");
-		}
+		calculMusique();
 		
-		if (timeAfterSound > 0 ) {
-			timeAfterSound-= (float)delta;
-		}
-		
-		timeSinceLastSound+=(float)delta;
-		
+	}
+	
+	public void calculMusique(){
+		songTime = ((AudioStreamPlayer3D)this.GetNode("./Musique")).GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
+		songTime -= AudioServer.GetOutputLatency();
 	}
 	
 	public void addScene(string path){
@@ -114,6 +120,7 @@ public partial class MainScene : Node3D
 	}
 	
 	public void startTransition(){
+		isBeat=false;
 		isTransition=true;
 		transitionTime=5;
 		addScene("res://Scene/background/portal.tscn");
@@ -128,15 +135,18 @@ public partial class MainScene : Node3D
 	
 	
 	public void highSuccess(){
-		
+		jauge+=hsuccess;
+		GD.Print("High Success");
 	}
 	
 	public void success(){
-		
+		jauge+=lsuccess;
+		GD.Print("Low Success");
 	}
 	
 	public void fail(){
-		
+		jauge+=failure;
+		GD.Print("Failure");
 	}
 	
 	public void addBonus(int type){
@@ -161,10 +171,9 @@ public partial class MainScene : Node3D
 		}
 		clearScene();
 		
-		GD.Print("Dimension : ",dimension);
 		addScene(dimensionRoad[dimension]);
 		addScene("res://Scene/Obstacle/spawner.tscn");
-		addScene("res://Scene/Musique/musique_dim_1.tscn");
+		addScene("res://Scene/Musique/musiqueLogic.tscn");
 		
 		score_buffer += 1000.0f * multiplier;
 		multiplier *= fact;
@@ -210,8 +219,17 @@ public partial class MainScene : Node3D
 	public float getTransitionTime(){
 		return transitionTime;
 	}
-	public float getTimeAfterSound(){
-		return timeAfterSound;
+	public double getTimeMusic(){
+		
+		return songTime;
 	}
+	public float getBPM(){
+		return (float)bpm;
+	}
+	
+	public bool getIsBeat(){
+		return isBeat;
+	}
+	
 	
 }
