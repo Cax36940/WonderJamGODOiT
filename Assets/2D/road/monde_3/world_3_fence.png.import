@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmrnitjocic5m"
-path.s3tc="res://.godot/imported/tile_mer.png-3878d7f5d62857ec315191f31d8eb515.s3tc.ctex"
+uid="uid://ccepla72glujk"
+path.s3tc="res://.godot/imported/world_3_fence.png-952680f07fe0eb5666eea389326386d1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/2D/obstacle/tile_mer.png"
-dest_files=["res://.godot/imported/tile_mer.png-3878d7f5d62857ec315191f31d8eb515.s3tc.ctex"]
+source_file="res://Assets/2D/road/monde_3/world_3_fence.png"
+dest_files=["res://.godot/imported/world_3_fence.png-952680f07fe0eb5666eea389326386d1.s3tc.ctex"]
 
 [params]
 

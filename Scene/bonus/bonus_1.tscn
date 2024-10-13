@@ -3,16 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://olbu7wmi5d8q" path="res://Assets/2D/collectibles/collectible_1.png" id="1_75la6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s64ja"]
-size = Vector3(3.72739, 3.05629, 0.358887)
+size = Vector3(4.46428, 3.05629, 0.358887)
 
 [node name="Bonus1" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71394, 0)
 pixel_size = 0.005
 texture = ExtResource("1_75la6")
 
 [node name="Bonus1" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bonus1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302476, 1.02814, -0.23637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0659695, 1.02814, -0.23637)
 shape = SubResource("BoxShape3D_s64ja")

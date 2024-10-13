@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://sg1mwqxtew8c"]
+[gd_scene load_steps=3 format=3 uid="uid://cw8quekyvqmwi"]
 
-[ext_resource type="Texture2D" uid="uid://c7i06okosc4q1" path="res://Assets/2D/road/monde_1/fence.png" id="1_o7ewx"]
+[ext_resource type="Texture2D" uid="uid://db3dm0wpui16p" path="res://Assets/2D/obstacle/stones.png" id="1_8kci6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lfn5e"]
 size = Vector3(3.72739, 3.05629, 0.358887)
@@ -9,13 +9,13 @@ size = Vector3(3.72739, 3.05629, 0.358887)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45291, 0)
-pixel_size = 0.004
-axis = 0
 alpha_cut = 1
-texture = ExtResource("1_o7ewx")
+texture = ExtResource("1_8kci6")
+hframes = 2
+vframes = 2
 
 [node name="Obstacle" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle"]
-transform = Transform3D(-0.0624247, 0, 0.99805, 0, 1, 0, -0.99805, 0, -0.0624247, -0.0405163, 1.02814, -0.23637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299179, 1.02814, -0.23637)
 shape = SubResource("BoxShape3D_lfn5e")

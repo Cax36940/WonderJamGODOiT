@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://sg1mwqxtew8c"]
+[gd_scene load_steps=5 format=3 uid="uid://i6vlggsk2xp0"]
 
-[ext_resource type="Texture2D" uid="uid://c7i06okosc4q1" path="res://Assets/2D/road/monde_1/fence.png" id="1_o7ewx"]
+[ext_resource type="Texture2D" uid="uid://c7i06okosc4q1" path="res://Assets/2D/road/monde_1/fence.png" id="1_7lvrn"]
+[ext_resource type="Texture2D" uid="uid://ccepla72glujk" path="res://Assets/2D/road/monde_3/world_3_fence.png" id="1_ih65d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_383sd"]
+albedo_texture = ExtResource("1_ih65d")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lfn5e"]
 size = Vector3(3.72739, 3.05629, 0.358887)
@@ -9,10 +13,11 @@ size = Vector3(3.72739, 3.05629, 0.358887)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45291, 0)
+material_override = SubResource("StandardMaterial3D_383sd")
 pixel_size = 0.004
 axis = 0
 alpha_cut = 1
-texture = ExtResource("1_o7ewx")
+texture = ExtResource("1_7lvrn")
 
 [node name="Obstacle" type="StaticBody3D" parent="."]
 
