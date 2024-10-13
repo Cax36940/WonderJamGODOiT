@@ -12,7 +12,7 @@ public partial class Border : Node3D
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/world_2_fence.tscn"));
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence3.tscn"));
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence4.tscn"));
-		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence.tscn"));
+		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence5.tscn"));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
