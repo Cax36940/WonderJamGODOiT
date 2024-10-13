@@ -5,11 +5,15 @@ public partial class MainScene : Node3D
 {
 	float accelerationMultiplier;
 	float speed;
+	float baseSpeed;
+	float requiredspeed;
+	float requiredBaseSpeed;
+	int slowStage=5;
 	float score_buffer;
 	int multiplier;
 	int fact;
 	int dimension;
-	int jauge;
+	float jauge;
 	int hsuccess = 10;
 	int lsuccess = 5;
 	int failure = -2;
@@ -32,6 +36,9 @@ public partial class MainScene : Node3D
 		GD.Print("ready");
 		GD.Print(bpm/60);
 		speed = 20;
+		baseSpeed = 20;
+		requiredspeed = 120;
+		requiredBaseSpeed = 120;
 		score_buffer = 0;
 		jauge = 0;
 		multiplier = 1;
@@ -101,11 +108,14 @@ public partial class MainScene : Node3D
 	{
 		score_buffer += (float)delta*speed*multiplier;
 		speed+= (float)delta*accelerationMultiplier;
-	
+		requiredspeed += (float)delta*accelerationMultiplier;
+		jauge = (speed-baseSpeed)/(requiredspeed-requiredBaseSpeed);
 		
-		if (jauge>=100){	
+		if (speed>=requiredspeed){	
 			startTransition();
-			jauge = 0;
+			speed-=100+slowStage*multiplier;
+			requiredBaseSpeed = requiredspeed;
+			baseSpeed = speed;
 			}
 		
 		if (isTransition){
@@ -148,20 +158,22 @@ public partial class MainScene : Node3D
 	
 	
 	public void highSuccess(){
-		jauge+=hsuccess;
+		speed+=hsuccess;
 		score_buffer+=50*multiplier;
 		GD.Print("High Success");
 		
 	}
 	
 	public void success(){
-		jauge+=lsuccess;
+		speed+=lsuccess;
 		score_buffer+=50*2*multiplier;
 		GD.Print("Low Success");
 	}
 	
 	public void fail(){
-		jauge+=failure;
+		if (speed> baseSpeed+5){
+			speed+=failure;
+		}
 		GD.Print("Failure");
 	}
 	
@@ -216,11 +228,11 @@ public partial class MainScene : Node3D
 		return instance;
 	}
 	
-	public int getJauge(){
+	public float getJauge(){
 		return jauge;
 	}
 	
-	public void setJauge(int njauge){
+	public void setJauge(float njauge){
 		jauge = njauge;
 	}
 	
