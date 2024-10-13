@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://v3dj0jhkx7m"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_xvgj3"]
+[ext_resource type="Texture2D" uid="uid://oxcxguwqulpl" path="res://Assets/2D/UI/death_screen.png" id="2_sxq40"]
+[ext_resource type="Texture2D" uid="uid://bvqxip3iloaja" path="res://Assets/2D/UI/buttons_quit1.png" id="3_mfv5l"]
+[ext_resource type="Texture2D" uid="uid://dfcm38biibs2b" path="res://Assets/2D/UI/buttons_quit2.png" id="4_t6fav"]
+[ext_resource type="Texture2D" uid="uid://bfe2h7xmffrx0" path="res://Assets/2D/UI/buttons_quit3.png" id="5_clj5n"]
+[ext_resource type="Texture2D" uid="uid://cxbs7m8x0x01u" path="res://Assets/2D/UI/buttons_replay1.png" id="6_gicif"]
+[ext_resource type="Texture2D" uid="uid://cdfpx6e0od5ce" path="res://Assets/2D/UI/buttons_replay2.png" id="7_7k3u5"]
+[ext_resource type="Texture2D" uid="uid://bhcv50i81ab47" path="res://Assets/2D/UI/buttons_replay3.png" id="8_tewoi"]
+
+[node name="Death" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xvgj3")
+
+[node name="DeathScreen" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("2_sxq40")
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 450.0
+offset_right = 950.0
+offset_bottom = 650.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("3_mfv5l")
+texture_pressed = ExtResource("4_t6fav")
+texture_hover = ExtResource("5_clj5n")
+
+[node name="Replay" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 300.0
+offset_right = 950.0
+offset_bottom = 500.0
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("6_gicif")
+texture_pressed = ExtResource("7_7k3u5")
+texture_hover = ExtResource("8_tewoi")
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]
