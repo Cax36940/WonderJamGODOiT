@@ -68,9 +68,9 @@ public partial class MainScene : Node3D
 		//dim 3
 		dimensionRoad.Add("res://Scene/road/road3.tscn");
 		//dim 4
-		dimensionRoad.Add("res://Scene/road/road.tscn");
+		dimensionRoad.Add("res://Scene/road/road4.tscn");
 		//dim 5
-		dimensionRoad.Add("res://Scene/road/road.tscn");
+		dimensionRoad.Add("res://Scene/road/road5.tscn");
 		
 		//Musique
 		

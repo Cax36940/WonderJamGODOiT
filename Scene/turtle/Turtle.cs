@@ -29,10 +29,11 @@ public partial class Turtle : CharacterBody3D
 
 		pos.X += direction*Speed*(float) delta;
 		
-		if (pos.X > 6){
-			pos.X =6;
-		}else if (pos.X < -6){
-			pos.X =-6;
+		int margin = 7;
+		if (pos.X > margin){
+			pos.X = margin;
+		}else if (pos.X < -margin){
+			pos.X =-margin;
 		}
 		
 		this.Set(Node3D.PropertyName.Position, pos);

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxp6i3ahte374"]
+[gd_scene load_steps=3 format=3 uid="uid://cysyo1lxqd4mu"]
 
-[ext_resource type="Texture2D" uid="uid://ciwum8hdfmic" path="res://Assets/2D/obstacle/tile_space.png" id="1_ugelp"]
+[ext_resource type="Texture2D" uid="uid://bri86m0n55j6q" path="res://Assets/2D/obstacle/tile_synthwave.png" id="1_bknav"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lfn5e"]
 size = Vector3(3.72739, 3.05629, 0.358887)
@@ -8,9 +8,9 @@ size = Vector3(3.72739, 3.05629, 0.358887)
 [node name="Node3D" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7201, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.733421, 0)
 alpha_cut = 1
-texture = ExtResource("1_ugelp")
+texture = ExtResource("1_bknav")
 hframes = 2
 vframes = 2
 frame = 2

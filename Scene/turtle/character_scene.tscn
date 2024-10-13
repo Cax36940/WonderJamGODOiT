@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scene/turtle/Turtle.cs" id="1_fl03i"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fd5qn"]
-radius = 0.635
+radius = 0.493928
 
 [node name="CharacterScene" type="Node3D"]
 

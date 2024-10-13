@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2m7g6t5lcaue"
-path.s3tc="res://.godot/imported/background_roadtrip.png-723722720b845824abf0b92c12668f8e.s3tc.ctex"
+uid="uid://caokndwnaldx4"
+path.s3tc="res://.godot/imported/background_synth.png-965b95027877881c8437db4c971065a5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/2D/background/background_roadtrip.png"
-dest_files=["res://.godot/imported/background_roadtrip.png-723722720b845824abf0b92c12668f8e.s3tc.ctex"]
+source_file="res://Assets/2D/background/background_synth.png"
+dest_files=["res://.godot/imported/background_synth.png-965b95027877881c8437db4c971065a5.s3tc.ctex"]
 
 [params]
 
