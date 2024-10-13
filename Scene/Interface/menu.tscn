@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://b1ywqhpkpktkc"]
+[gd_scene load_steps=4 format=3 uid="uid://b1ywqhpkpktkc"]
+
+[ext_resource type="Texture2D" uid="uid://dgfm67duguns1" path="res://Assets/2D/UI/menu.png" id="1_60g7i"]
+[ext_resource type="Script" path="res://Scene/Interface/menu.gd" id="1_qjaff"]
+[ext_resource type="Texture2D" uid="uid://cw4ph2pmo540f" path="res://icon.svg" id="2_mwy4e"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +11,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qjaff")
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("1_60g7i")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 135.0
+offset_right = 396.0
+offset_bottom = 271.0
+text = "
+"
+icon = ExtResource("2_mwy4e")
+flat = true
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 351.0
+offset_right = 394.0
+offset_bottom = 487.0
+icon = ExtResource("2_mwy4e")
+flat = true
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
