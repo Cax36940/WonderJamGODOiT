@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvt6bxc4mah18"
-path.s3tc="res://.godot/imported/world_2_fence.png-9a2071d6cd47fd0343cd4fad71794255.s3tc.ctex"
+uid="uid://bnahyuhfrgyo8"
+path.s3tc="res://.godot/imported/collectible_2.png-4937a5f6ab8598f0ae7d24f151681153.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/2D/road/monde_2/world_2_fence.png"
-dest_files=["res://.godot/imported/world_2_fence.png-9a2071d6cd47fd0343cd4fad71794255.s3tc.ctex"]
+source_file="res://Assets/2D/collectibles/collectible_2.png"
+dest_files=["res://.godot/imported/collectible_2.png-4937a5f6ab8598f0ae7d24f151681153.s3tc.ctex"]
 
 [params]
 

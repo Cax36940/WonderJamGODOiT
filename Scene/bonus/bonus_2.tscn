@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2ufrw4o2bdt0"]
 
-[ext_resource type="Texture2D" uid="uid://cw4ph2pmo540f" path="res://icon.svg" id="1_nqtyc"]
+[ext_resource type="Texture2D" uid="uid://bnahyuhfrgyo8" path="res://Assets/2D/collectibles/collectible_2.png" id="1_2ym74"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ygqwx"]
 size = Vector3(3.72739, 3.05629, 0.358887)
@@ -8,7 +8,8 @@ size = Vector3(3.72739, 3.05629, 0.358887)
 [node name="Bonus2" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("1_nqtyc")
+pixel_size = 0.005
+texture = ExtResource("1_2ym74")
 
 [node name="Bonus2" type="StaticBody3D" parent="."]
 

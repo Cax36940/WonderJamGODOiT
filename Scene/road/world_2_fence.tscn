@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmn2el1q8fw88"]
+
+[ext_resource type="Texture2D" uid="uid://bvt6bxc4mah18" path="res://Assets/2D/road/monde_2/world_2_fence.png" id="1_gryfd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfn5e"]
+size = Vector3(3.72739, 3.05629, 0.358887)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45291, 0)
+pixel_size = 0.004
+axis = 0
+alpha_cut = 1
+texture = ExtResource("1_gryfd")
+
+[node name="Obstacle" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.299179, 2.73826, -0.23637)
+shape = SubResource("BoxShape3D_lfn5e")
