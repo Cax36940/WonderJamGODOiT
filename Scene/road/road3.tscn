@@ -7,12 +7,13 @@
 albedo_texture = ExtResource("2_plrph")
 
 [node name="Road" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -106, 0)
 
 [node name="Tiling" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 
 [node name="Background" type="Sprite3D" parent="Tiling"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -57.632, -172.924, -477.8)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -57.632, -297.222, -477.8)
 material_override = SubResource("StandardMaterial3D_ekher")
 pixel_size = 0.4
 texture = ExtResource("3_ixyk0")

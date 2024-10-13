@@ -11,7 +11,7 @@ public partial class Border : Node3D
 	{
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence.tscn"));
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/world_2_fence.tscn"));
-		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence.tscn"));
+		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence3.tscn"));
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence.tscn"));
 		borderScene.Add(GD.Load<PackedScene>("res://Scene/road/fence.tscn"));
 		
@@ -41,16 +41,13 @@ public partial class Border : Node3D
 	}
 	
 	public void fill(){
-				Node3D wall;
-		
-		for(float posX = 0.0f; posX < 505.0f; posX+=borderDist[current_dimension]){
+			Node3D wall;
 			wall =(Node3D)borderScene[current_dimension].Instantiate();
-			wall.Set(Node3D.PropertyName.Position, new Vector3(8.0f,0.0f,-posX+5.0f));
+			wall.Set(Node3D.PropertyName.Position, new Vector3(8.0f, 0.0f, 0.0f));
 			this.AddChild(wall);
 			wall =(Node3D)borderScene[current_dimension].Instantiate();
-			wall.Set(Node3D.PropertyName.Position, new Vector3(-8.0f,0.0f,-posX+5.0f));
+			wall.Set(Node3D.PropertyName.Position, new Vector3(-8.0f, 0.0f, 0.0f));
 			this.AddChild(wall);
-		}
 		
 	}
 }
