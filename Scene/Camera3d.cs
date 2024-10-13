@@ -24,10 +24,7 @@ public partial class Camera3d : Camera3D
 	public override void _Process(double delta)
 	{
 		if((MainScene.getInstance().istransition()) && (MainScene.getInstance().getTransitionTime() <= 0)){
-			GD.Print("Dit mention !");
 			this.Set(Node3D.PropertyName.Position, StartPoint);
-		}else{
-			
 		}
 		Increment += MainScene.getInstance().getSpeed() - CurrentSpeed;
 		CurrentSpeed = MainScene.getInstance().getSpeed();
@@ -36,7 +33,6 @@ public partial class Camera3d : Camera3D
 		
 		
 		Vector3 pos =(Vector3) this.Get(Node3D.PropertyName.Position);		
-		GD.Print(pos.X + " " + pos.Y + " " + pos.Z + " " + Increment);
 		
 		Vector3 diff = pos - ReferencePoint;
 		
