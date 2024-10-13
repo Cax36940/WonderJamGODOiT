@@ -33,6 +33,10 @@ public partial class MainScene : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		setup();
+	}
+	
+	public void setup(){
 		GD.Print("ready");
 		GD.Print(bpm/60);
 		speed = 20;
@@ -44,7 +48,7 @@ public partial class MainScene : Node3D
 		fact = 2;
 		dimension = 0;
 		accelerationMultiplier = 0.2f;
-		addScene("res://Scene/Musique/musiqueLogic.tscn");
+		addScene("res://Scene/Musique/musique3.tscn");
 		addScene("res://Scene/turtle/character_scene.tscn");
 		addScene("res://Scene/road/road.tscn");
 		addScene("res://Scene/Obstacle/spawner.tscn");
@@ -54,7 +58,6 @@ public partial class MainScene : Node3D
 		
 		instance = this;
 		loadDimensionList();
-		
 	}
 	
 	public void loadDimensionList(){
@@ -212,6 +215,7 @@ public partial class MainScene : Node3D
 	
 	public void death(){
 		GD.Print("Now you're dead you filthy casual ");
+		//SetProcessMode(GD.PROCESS_MODE_DISABLED);
 	}
 	
 	public float getSpeed(){

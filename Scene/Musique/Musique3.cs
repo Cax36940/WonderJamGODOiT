@@ -15,37 +15,29 @@ public partial class Musique3 : AudioStreamPlayer3D
 	{
 		songTime = this.GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
 		songTime -= AudioServer.GetOutputLatency();
-		if(songTime < 11){
+		if(songTime < 11.5){
 			MainScene.getInstance().setIsBeat(false);
-		}if(songTime >12 && songTime <45){
+		}if(songTime >11.5 && songTime <44.5){
 			MainScene.getInstance().setIsBeat(true);
 			MainScene.getInstance().setBPM(38);
-		}if(songTime >45 && songTime <50){
+		}if(songTime >44.5 && songTime <50){
 			MainScene.getInstance().setIsBeat(false);
-		}if(songTime >50 && songTime <95){
+		}if(songTime >50.5 && songTime <90){
 			MainScene.getInstance().setIsBeat(true);
 			MainScene.getInstance().setBPM(75);
-		}if(songTime >95 && songTime <100){
+		}if(songTime >90 && songTime <199.5){
 			MainScene.getInstance().setIsBeat(false);
-		}if(songTime >100 && songTime <153){
-			MainScene.getInstance().setIsBeat(true);
-			MainScene.getInstance().setBPM(80);
-		}if(songTime >153 && songTime <180){
+		}if(songTime >99.5 && songTime <180){
 			MainScene.getInstance().setIsBeat(true);
 			MainScene.getInstance().setBPM(75);
-		}if(songTime >180 && songTime <230){
+		}if(songTime >180 && songTime <232){
 			MainScene.getInstance().setIsBeat(false);
-		}if(songTime >230 && songTime <255){
+		}if(songTime >232.5 && songTime <338){
 			MainScene.getInstance().setIsBeat(true);
 			MainScene.getInstance().setBPM(75);
-		}if(songTime >255 && songTime <300){
-			MainScene.getInstance().setIsBeat(true);
-			MainScene.getInstance().setBPM(75);
-		}if(songTime >300 && songTime <305){
+		}if(songTime >338 ){
 			MainScene.getInstance().setIsBeat(false);
-		}if(songTime >305 && songTime <355){
-			MainScene.getInstance().setIsBeat(true);
-			MainScene.getInstance().setBPM(80);
+		
 		}
 		
 	}
