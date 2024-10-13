@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuuhbrdthc4ym"]
+[gd_scene load_steps=5 format=3 uid="uid://cuuhbrdthc4ym"]
 
 [ext_resource type="Script" path="res://Code/Interface/hud.gd" id="1_0rilc"]
 [ext_resource type="FontFile" uid="uid://bjjfelhwini4n" path="res://Assets/Interface/Angels.ttf" id="2_dex0c"]
 [ext_resource type="PackedScene" uid="uid://dxe00o3msgngq" path="res://Scene/Interface/slider.tscn" id="3_y5pll"]
+[ext_resource type="PackedScene" uid="uid://cw36d4x5osfp7" path="res://Scene/Interface/jauge.tscn" id="4_c58e5"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -28,4 +29,7 @@ text = "200 mph"
 horizontal_alignment = 2
 
 [node name="Slider" parent="." instance=ExtResource("3_y5pll")]
+layout_mode = 1
+
+[node name="Jauge" parent="." instance=ExtResource("4_c58e5")]
 layout_mode = 1
