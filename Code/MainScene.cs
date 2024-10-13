@@ -43,7 +43,7 @@ public partial class MainScene : Node3D
 		multiplier = 1;
 		fact = 2;
 		dimension = 0;
-		accelerationMultiplier = 0.5f;
+		accelerationMultiplier = 0.2f;
 		addScene("res://Scene/Musique/musiqueLogic.tscn");
 		addScene("res://Scene/turtle/character_scene.tscn");
 		addScene("res://Scene/road/road.tscn");
@@ -108,7 +108,7 @@ public partial class MainScene : Node3D
 		score_buffer += (float)delta*speed*multiplier;
 		speed+= (float)delta*accelerationMultiplier;
 		baseSpeed+= (float)delta*accelerationMultiplier;
-		requiredspeed += (float)delta*accelerationMultiplier;
+		requiredspeed += (float)delta*accelerationMultiplier*1.05f;
 		jauge = (speed-baseSpeed)/(requiredspeed-baseSpeed);
 		
 		if (speed>=requiredspeed && !isTransition){	
@@ -120,7 +120,6 @@ public partial class MainScene : Node3D
 			if (transitionTime <= 0){
 				changeDimension();
 				speed=baseSpeed;
-				requiredspeed +=slowStage*multiplier;
 				isTransition = false;
 				isBeat=true;
 			}else {
@@ -159,14 +158,14 @@ public partial class MainScene : Node3D
 	
 	public void highSuccess(){
 		speed+=((requiredspeed-baseSpeed)/bpm)*hsuccess;
-		score_buffer+=50*multiplier;
+		score_buffer+=50*2*multiplier;
 		GD.Print("High Success");
 		
 	}
 	
 	public void success(){
 		speed+=((requiredspeed-baseSpeed)/bpm)*lsuccess;
-		score_buffer+=50*2*multiplier;
+		score_buffer+=50*multiplier;
 		GD.Print("Low Success");
 	}
 	
